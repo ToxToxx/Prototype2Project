@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float rotatingSpeed = 60;
     [SerializeField] private float maxMovingSpeedCoef = 1.5f;
     [SerializeField] private Transform playerVisual;
+    private int movingRangeX = 23;
 
     private float maxMovingSpeed;
     private float minMovingSpeed = 5f;
@@ -30,21 +31,32 @@ public class Player : MonoBehaviour
         {
             HandleMovement();
         }
-        Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
-        Vector3 moveDir = new(inputVector.x, 0f, 0f);
-        isWalking = moveDir != Vector3.zero;
-
-        transform.position += moveSpeed * Time.deltaTime * moveDir;
+       
     }
 
     private void HandleMovement()
     {
-        
-        /*if (moveDir != Vector3.zero)
+        if (transform.position.x > movingRangeX)
         {
-            Quaternion toRotation = Quaternion.LookRotation(moveDir, Vector3.up);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotatingSpeed * Time.deltaTime);
-        }*/
-    }
+            transform.position = new Vector3(movingRangeX, transform.position.y, transform.position.z);
+        }
+        else if (transform.position.x < -movingRangeX)
+        {
+            transform.position = new Vector3(-movingRangeX, transform.position.y, transform.position.z);
+        }
+        else
+        {
+            Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
+            Vector3 moveDir = new(inputVector.x, 0f, 0f);
+            isWalking = moveDir != Vector3.zero;
 
+            transform.position += moveSpeed * Time.deltaTime * moveDir;
+            
+            if (moveDir != Vector3.zero)
+            {
+                Quaternion toRotation = Quaternion.LookRotation(moveDir, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotatingSpeed * Time.deltaTime);
+            }
+        }
+    }
 }
