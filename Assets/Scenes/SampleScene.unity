@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 121461019}
   - component: {fileID: 121461018}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: BulletVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,7 +878,7 @@ GameObject:
   - component: {fileID: 897168291}
   - component: {fileID: 897168290}
   m_Layer: 0
-  m_Name: ShootingParticle
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
