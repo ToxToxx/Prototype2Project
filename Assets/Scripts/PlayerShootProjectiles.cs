@@ -16,7 +16,7 @@ public class PlayerShootProjectile : MonoBehaviour
     {
         Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
 
-        Vector3 shootDir = (gunEndPosition.position - gunStartPosition.position).normalized; 
+        Vector3 shootDir = (gunEndPosition.position - gunStartPosition.position).normalized;
         bulletTransform.GetComponent<Bullet>().Setup(shootDir);
     }
 }

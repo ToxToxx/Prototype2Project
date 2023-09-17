@@ -10,20 +10,14 @@ public class Bullet : MonoBehaviour
     public void Setup(Vector3 shootDir)
     {
         this.shootDir = shootDir;
-        transform.eulerAngles = new Vector3(0,0, GetAngleFromVectorFloat(shootDir));
+        transform.rotation = Quaternion.LookRotation(shootDir, Vector3.up);
         Destroy(gameObject, bulletDestroyTime);
     }
 
     private void Update()
     {
-        transform.position += bulletSpeed * Time.deltaTime * shootDir;
+        float speed = Mathf.Abs(bulletSpeed);
+        transform.position += speed * Time.deltaTime * shootDir;
     }
 
-    private float GetAngleFromVectorFloat(Vector3 dir)
-    {
-        dir = dir.normalized;
-        float n = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        if (n < 0) n += 360;
-        return n;
-    }
 }
