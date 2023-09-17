@@ -8,21 +8,17 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; }
     [SerializeField] private float moveSpeed = 5;
     [SerializeField] private float rotatingSpeed = 60;
-    [SerializeField] private float maxMovingSpeedCoef = 1.5f;
     [SerializeField] private Transform playerVisual;
+    private bool isWalking;
     private int movingRangeX = 23;
 
-    private float maxMovingSpeed;
-    private float minMovingSpeed = 5f;
-
-
-    private bool isRunning;
-    private bool isWalking;
-
-    private Rigidbody rb;
     private void Awake()
     {
         Instance = this;
+    }
+    private void Start()
+    {
+        isWalking = false;
     }
 
     void Update()
