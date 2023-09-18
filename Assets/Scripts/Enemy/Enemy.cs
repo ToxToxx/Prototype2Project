@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int maxHealth;
+    private int currentHealth;
+    private void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int damageAmount)
     {
-        
+        currentHealth -= damageAmount; // ”меньшите текущее количество жизней на damageAmount
+
+        // ѕроверьте, если у врага закончились жизни, и выполните какие-либо дополнительные действи€
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
+
+    void Die()
+    {
+        Destroy(gameObject);
+    }
+
+
+
 }
