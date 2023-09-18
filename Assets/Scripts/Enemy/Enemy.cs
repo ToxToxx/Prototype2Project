@@ -13,9 +13,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount; // ”меньшите текущее количество жизней на damageAmount
+        currentHealth -= damageAmount; 
 
-        // ѕроверьте, если у врага закончились жизни, и выполните какие-либо дополнительные действи€
         if (currentHealth <= 0)
         {
             Die();
