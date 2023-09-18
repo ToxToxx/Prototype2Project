@@ -633,6 +633,7 @@ GameObject:
   - component: {fileID: 610856147}
   - component: {fileID: 610856150}
   - component: {fileID: 610856151}
+  - component: {fileID: 610856152}
   - component: {fileID: 610856149}
   - component: {fileID: 610856148}
   m_Layer: 0
@@ -755,6 +756,22 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &610856152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610856145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd804a1150f835e4488bfd0cce789bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
+  healAmount: 5
+  healCount: 5
 --- !u!1 &647562991
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +886,7 @@ GameObject:
   - component: {fileID: 803076892}
   - component: {fileID: 803076893}
   - component: {fileID: 803076894}
-  - component: {fileID: 803076895}
+  - component: {fileID: 803076897}
   - component: {fileID: 803076896}
   m_Layer: 0
   m_Name: Enemy
@@ -928,19 +945,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 2
---- !u!114 &803076895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803076891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db905b271278d24eb4f5176c3c05e1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 5
 --- !u!54 &803076896
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -968,6 +972,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 118
   m_CollisionDetection: 0
+--- !u!114 &803076897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 803076891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db905b271278d24eb4f5176c3c05e1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  currentHealth: 0
+  armor: 5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

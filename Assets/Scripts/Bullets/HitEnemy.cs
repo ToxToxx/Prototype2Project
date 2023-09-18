@@ -11,9 +11,9 @@ public class HitEnemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Enemy>())
+        if (other.GetComponent<EnemyHealth>())
         {
-            other.GetComponent<Enemy>().TakeDamage(damage);
+            other.GetComponent<EnemyHealth>().TakeDamage(damage);
             Destroy(gameObject);
         }
         

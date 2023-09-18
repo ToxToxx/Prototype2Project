@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class HealthLogic : MonoBehaviour
 {
-    [SerializeField] private int maxHealth;
-    private int currentHealth;
+    [SerializeField] public int maxHealth;
+    public int currentHealth;
+
     private void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damageAmount)
+    public virtual void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount; 
+
+        currentHealth -= damageAmount;
 
         if (currentHealth <= 0)
         {
@@ -21,11 +23,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         Destroy(gameObject);
     }
-
-
-
 }
