@@ -770,8 +770,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
-  healAmount: 5
-  healCount: 5
+  healAmount: 2
+  healCount: 3
 --- !u!1 &647562991
 GameObject:
   m_ObjectHideFlags: 0

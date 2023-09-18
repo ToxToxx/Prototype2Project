@@ -12,6 +12,7 @@ public abstract class HealthLogic : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+
     public virtual void TakeDamage(int damageAmount)
     {
 
