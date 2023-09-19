@@ -11,6 +11,7 @@ public class DefensePoint : MonoBehaviour
         if (other.gameObject.GetComponent<EnemyDamage>())
         {
             PlayerHealth.Instance.TakeDamage(other.GetComponent<EnemyDamage>().GetDamage());
+            Destroy(other.gameObject, 3);
         }
     }
 

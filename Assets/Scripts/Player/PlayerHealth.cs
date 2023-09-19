@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class PlayerHealth : HealthLogic
 {
+    public static PlayerHealth Instance { get; set; }
+
+    [SerializeField] private DefensePoint defensePoint;
     [SerializeField] private int healAmount;
     [SerializeField] private int healCount;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         currentHealth = maxHealth;
         GameInput.Instance.OnHeal += GameInput_OnHeal;
     }
+
+
 
     private void GameInput_OnHeal(object sender, System.EventArgs e)
     {

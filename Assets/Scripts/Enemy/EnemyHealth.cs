@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class EnemyHealth : HealthLogic
 {
@@ -15,6 +17,10 @@ public class EnemyHealth : HealthLogic
         {
             Die();
         }
+    }
+    private void OnDestroy()
+    {
+        EnemySpawner.Instance.DecreaseCurrentEnemy();
     }
 
 }
