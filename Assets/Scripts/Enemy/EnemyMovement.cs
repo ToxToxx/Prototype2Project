@@ -1,16 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class EnemyMovement : MonoBehaviour
 {
+    [SerializeField] private float enemySpeed;
+    private Vector3 movedir;
 
-   [SerializeField] private float enemySpeed;
-
+    private void Start()
+    {
+        movedir = DefensePoint.Instance.gameObject.transform.position - transform.position;
+    }
     void Update()
     {
-        transform.Translate(enemySpeed * Time.deltaTime * Vector3.forward);
+        EnemyMove();
     }
 
-    
+    private void EnemyMove()
+    {
+        transform.Translate(enemySpeed * Time.deltaTime * movedir);
+    }
+
 }

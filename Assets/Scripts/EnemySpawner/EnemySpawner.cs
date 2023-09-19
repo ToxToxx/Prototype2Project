@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner Instance;
+
     [SerializeField] private GameObject enemyPr;
-    [SerializeField] private float enemyInterval;
     [SerializeField] private float enemyRangeX;
     [SerializeField] private int enemyMax;
     [SerializeField] private int enemyCurrent;
@@ -22,8 +22,8 @@ public class EnemySpawner : MonoBehaviour
     private void Update()
     {   if(enemyCurrent < enemyMax)
         {
-            StartCoroutine(SpawnEnemy(enemyInterval, enemyPr));
-            enemyCurrent++;
+            SpawnEnemy(enemyPr);
+            enemyCurrent++;  
         }
     }
 
@@ -32,10 +32,8 @@ public class EnemySpawner : MonoBehaviour
         enemyCurrent--;
     }
 
-    private IEnumerator SpawnEnemy(float interval, GameObject enemy)
+    private void SpawnEnemy( GameObject enemy)
     {
-        yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Random.Range(-enemyRangeX, enemyRangeX), 0, transform.position.z),Quaternion.identity);
-        
+        Instantiate(enemy, new Vector3(Random.Range(-enemyRangeX, enemyRangeX), 0, transform.position.z), Quaternion.identity);
     }
 }

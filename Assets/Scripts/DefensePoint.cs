@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class DefensePoint : MonoBehaviour
 {
-    
+    public static DefensePoint Instance;
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<EnemyDamage>())
