@@ -20,7 +20,8 @@ public class EnemySpawner : MonoBehaviour
         enemyCurrent = 0;
     }
     private void Update()
-    {   if(enemyCurrent < enemyMax)
+    {   
+        if(enemyCurrent < enemyMax)
         {
             SpawnEnemy(enemyPr);
             enemyCurrent++;  
@@ -32,8 +33,8 @@ public class EnemySpawner : MonoBehaviour
         enemyCurrent--;
     }
 
-    private void SpawnEnemy( GameObject enemy)
+    private void SpawnEnemy(GameObject enemy)
     {
-        Instantiate(enemy, new Vector3(Random.Range(-enemyRangeX, enemyRangeX), 0, transform.position.z), Quaternion.identity);
+        Instantiate(enemy, transform.position, Quaternion.identity);
     }
 }
