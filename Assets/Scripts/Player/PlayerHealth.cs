@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerHealth : HealthLogic
 {
     public static PlayerHealth Instance { get; set; }
-
-    [SerializeField] private DefensePoint defensePoint;
     [SerializeField] private int healAmount;
     [SerializeField] private int healCount;
 
