@@ -42,5 +42,10 @@ public class TimeUI : MonoBehaviour
     {
         timeSwitch = switchType;
     }
+
+    public float GetCurrentTime()
+    {
+        return currentTime;
+    }
 }
 

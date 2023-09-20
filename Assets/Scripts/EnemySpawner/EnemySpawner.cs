@@ -47,4 +47,14 @@ public class EnemySpawner : MonoBehaviour
 
         Instantiate(enemy, new Vector3(randomPositionX, transform.position.y, transform.position.z), Quaternion.identity);
     }
+    
+    public void DecreaseMaxTimer(float timeAmount)
+    {
+        maxTimer -= timeAmount;
+    }
+
+    public float GetMaxTimer()
+    {
+        return maxTimer;
+    }
 }

@@ -46,4 +46,9 @@ public class ScoreUI : MonoBehaviour
     {
         scoreSwitch = scoreType;
     }
+
+    public int GetScore()
+    {
+        return score;
+    }
 }
