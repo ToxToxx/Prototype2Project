@@ -1356,10 +1356,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 877619344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50cd64d5157775f4e9ee4a60904ad120, type: 3}
+  m_Script: {fileID: 11500000, guid: 79f7b96569d9deb469d0a523a644e47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPotionsText: {fileID: 1831184443}
+  scoreText: {fileID: 1831184443}
+  score: 0
+  maxScore: 0
+  scoreSwitch: 0
 --- !u!1 &897539730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,10 +2232,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810118770}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50cd64d5157775f4e9ee4a60904ad120, type: 3}
+  m_Script: {fileID: 11500000, guid: c70d304a0edcf5c4eb72c8cda88acd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPotionsText: {fileID: 724302144}
+  timeText: {fileID: 724302144}
+  timeSwitch: 0
+  maxTime: 60
 --- !u!1 &1831184441
 GameObject:
   m_ObjectHideFlags: 0

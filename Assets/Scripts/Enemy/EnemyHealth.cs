@@ -6,8 +6,8 @@ using UnityEngine.EventSystems;
 
 public class EnemyHealth : HealthLogic
 {
-
     [SerializeField] private int armor;
+    [SerializeField] private int scoreDeath;
 
     public override void TakeDamage(int damageAmount)
     {
@@ -16,6 +16,7 @@ public class EnemyHealth : HealthLogic
         if (currentHealth <= 0)
         {
             Die();
+            ScoreUI.Instance.SetScore(scoreDeath);
         }
     }
     private void OnDestroy()
