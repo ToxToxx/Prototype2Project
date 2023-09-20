@@ -7,13 +7,6 @@ public class HealthPointsUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healthPointsText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         healthPointsText.text = "Health Points: " + PlayerHealth.Instance.currentHealth;

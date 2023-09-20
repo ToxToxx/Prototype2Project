@@ -42,5 +42,10 @@ public class PlayerHealth : HealthLogic
         
     }
 
+    public int GetPotionsCount()
+    {
+        return healCount;
+    }
+
 
 }
