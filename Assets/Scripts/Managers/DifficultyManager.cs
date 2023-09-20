@@ -7,7 +7,6 @@ public class DifficultyManager : MonoBehaviour
 {
     [SerializeField] private float timeEnemySpawnerDecreaser;
     [SerializeField] private float scoreTreshold;
-    [SerializeField] private float timeTreshold;
     [SerializeField] private bool isDifficultyChanged;
 
     private void Start()
@@ -16,21 +15,13 @@ public class DifficultyManager : MonoBehaviour
     }
     void Update()
     {
-        if (GameManager.Instance.GetScoreSwitcher() == true)
-        {
-            ScoreDifficultySet();
-        } 
-        if(GameManager.Instance.GetTimeSwitcher() == true)
-        {
-            TimeDifficultySet();
-        }
-        
+        ScoreDifficultySet();     
     }
 
     private void ScoreDifficultySet()
     {
         float currentScore = ScoreUI.Instance.GetScore();
-        if (currentScore % scoreTreshold == 0 && currentScore > 0 && !isDifficultyChanged)
+        if (currentScore % scoreTreshold == 0 && currentScore > 0 && !isDifficultyChanged && EnemySpawner.Instance.GetMaxTimer() > 1)
         {
             EnemySpawner.Instance.DecreaseMaxTimer(timeEnemySpawnerDecreaser);
             isDifficultyChanged = true;
@@ -40,20 +31,4 @@ public class DifficultyManager : MonoBehaviour
             isDifficultyChanged = false;
         }
     }
-
-    private void TimeDifficultySet()
-    {
-        float currentTime = TimeUI.Instance.GetCurrentTime();
-        if (currentTime % timeTreshold == 0 && currentTime > 0 && !isDifficultyChanged)
-        {
-            EnemySpawner.Instance.DecreaseMaxTimer(timeEnemySpawnerDecreaser);
-            isDifficultyChanged = true;
-        }
-        else if (currentTime % timeTreshold != 0)
-        {
-            isDifficultyChanged = false;
-        }
-    }
-
-
 }
