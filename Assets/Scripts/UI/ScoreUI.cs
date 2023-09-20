@@ -41,4 +41,9 @@ public class ScoreUI : MonoBehaviour
     {
         score += scoreAmount;
     }
+
+    public void SetScoreType(bool scoreType)
+    {
+        scoreSwitch = scoreType;
+    }
 }

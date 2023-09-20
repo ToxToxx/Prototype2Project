@@ -6,11 +6,17 @@ using UnityEngine;
 
 public class TimeUI : MonoBehaviour
 {
+    public static TimeUI Instance;
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private bool timeSwitch;
     [SerializeField] private float maxTime;
 
     private float currentTime;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         currentTime = 0;
@@ -30,6 +36,11 @@ public class TimeUI : MonoBehaviour
             timeText.text = "Time: " + formattedTime;
         }
        
+    }
+
+    public void SetTimeSwitch(bool switchType)
+    {
+        timeSwitch = switchType;
     }
 }
 
