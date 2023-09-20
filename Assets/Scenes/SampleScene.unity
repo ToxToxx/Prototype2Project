@@ -1537,7 +1537,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeEnemySpawnerDecreaser: 0.5
-  scoreTreshold: 10
+  scoreTreshold: 50
+  timeTreshold: 30
+  isDifficultyChanged: 0
 --- !u!1 &1012220499
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class DifficultyManager : MonoBehaviour
 
     private void Start()
     {
-        isDifficultyChanged = true;
+        isDifficultyChanged = false;
     }
     void Update()
     {
@@ -29,53 +29,31 @@ public class DifficultyManager : MonoBehaviour
 
     private void ScoreDifficultySet()
     {
-        if (IsScoreOverTreshold() && !isDifficultyChanged)
+        float currentScore = ScoreUI.Instance.GetScore();
+        if (currentScore % scoreTreshold == 0 && currentScore > 0 && !isDifficultyChanged)
         {
             EnemySpawner.Instance.DecreaseMaxTimer(timeEnemySpawnerDecreaser);
-            
+            isDifficultyChanged = true;
+        }
+        else if (currentScore % scoreTreshold != 0)
+        {
+            isDifficultyChanged = false;
         }
     }
+
     private void TimeDifficultySet()
     {
-        if (IsTimeOverTreshold() && !isDifficultyChanged)
+        float currentTime = TimeUI.Instance.GetCurrentTime();
+        if (currentTime % timeTreshold == 0 && currentTime > 0 && !isDifficultyChanged)
         {
             EnemySpawner.Instance.DecreaseMaxTimer(timeEnemySpawnerDecreaser);
-        }
-    }
-
-    private bool IsNaturalNumber(float number)
-    {
-        if (number < 1.0)
-        {
-            return false;
-        }
-
-        double integer = Math.Truncate(number);
-        if (number - integer > 0.0)
-        {
-            return false;
-        }
-        return true;
-    }
-
-    private bool IsScoreOverTreshold()
-    {
-        if (IsNaturalNumber(ScoreUI.Instance.GetScore() % scoreTreshold) && EnemySpawner.Instance.GetMaxTimer() > 1)
-        {
             isDifficultyChanged = true;
-            return true;
         }
-        isDifficultyChanged = false;
-        return false;
-    } 
-    private bool IsTimeOverTreshold()
-    {
-        if (IsNaturalNumber(Convert.ToInt32(TimeUI.Instance.GetCurrentTime()) % timeTreshold) && EnemySpawner.Instance.GetMaxTimer() > 1)
+        else if (currentTime % timeTreshold != 0)
         {
-            isDifficultyChanged = true;
-            return true;
+            isDifficultyChanged = false;
         }
-        isDifficultyChanged = false;
-        return false;
     }
+
+
 }
