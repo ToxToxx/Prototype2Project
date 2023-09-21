@@ -10,10 +10,7 @@ public class GameWonUI : MonoBehaviour
 
     void Update()
     {
-        gameWonScoreText.text = "Score: " + ScoreUI.Instance.GetScore();
-
-        string formattedTime = TimeUI.Instance.GetCurrentTime().ToString("0.00");
-        gameWonTimeText.text = "Time: " + formattedTime;
+        ShowResultsCommand.ShowResults(gameWonScoreText, gameWonTimeText);
     }
     public void GameWonShow()
     {

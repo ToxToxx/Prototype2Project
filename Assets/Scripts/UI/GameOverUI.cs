@@ -10,10 +10,7 @@ public class GameOverUI : MonoBehaviour
 
     void Update()
     {
-        gameOverScoreText.text = "Score: " + ScoreUI.Instance.GetScore();
-
-        string formattedTime = TimeUI.Instance.GetCurrentTime().ToString("0.00");
-        gameOverTimeText.text = "Time: " + formattedTime;
+        ShowResultsCommand.ShowResults(gameOverScoreText, gameOverTimeText);
     }
 
     public void GameOverShow()
