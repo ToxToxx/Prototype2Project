@@ -51,4 +51,9 @@ public class ScoreUI : MonoBehaviour
     {
         return score;
     }
+
+    public int GetMaxScore()
+    {
+        return maxScore;
+    }
 }

@@ -47,5 +47,10 @@ public class TimeUI : MonoBehaviour
     {
         return currentTime;
     }
+
+    public float GetMaxTime()
+    {
+        return maxTime;
+    }
 }
 
