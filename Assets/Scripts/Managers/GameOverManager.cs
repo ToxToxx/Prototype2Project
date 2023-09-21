@@ -17,18 +17,34 @@ public class GameOverManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player.Instance.IsDestroyed())
+        if (!Player.Instance.IsDestroyed())
         {
-
-        }
-        if (GameManager.Instance.GetScoreSwitcher())
+            if (GameManager.Instance.GetScoreSwitcher() && !GameManager.Instance.GetTimeSwitcher())
+            {
+                GameOnScoreOver();
+            }
+            else if (GameManager.Instance.GetTimeSwitcher() && !GameManager.Instance.GetScoreSwitcher())
+            {
+                GameOnTimeOver();
+            }
+        } 
+        else
         {
-            GameOnScoreOver();
+            GameOver();
         }
+        
     }
 
     private void GameOnScoreOver()
     {
         
+    }
+    private void GameOnTimeOver()
+    {
+        
+    }
+    private void GameOver()
+    {
+
     }
 }
