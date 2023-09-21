@@ -15,4 +15,12 @@ public class GameWonUI : MonoBehaviour
     {
         
     }
+    public void GameWonShow()
+    {
+        gameObject.SetActive(true);
+    }
+    public void GameWonHide()
+    {
+        gameObject.SetActive(false);
+    }
 }

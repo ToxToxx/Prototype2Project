@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class GameOverManager : MonoBehaviour
 {
-    [SerializeField] private GameObject gameOverUI;
-    [SerializeField] private GameObject gameWonUI;
+    [SerializeField] private GameOverUI gameOverUI;
+    [SerializeField] private GameWonUI gameWonUI;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameOverUI.GameOverHide();
+        gameWonUI.GameWonHide();
     }
 
     // Update is called once per frame
@@ -37,14 +38,23 @@ public class GameOverManager : MonoBehaviour
 
     private void GameOnScoreOver()
     {
-        
+        if(ScoreUI.Instance.GetScore() >= ScoreUI.Instance.GetMaxScore())
+        {
+            gameWonUI.GameWonShow();
+            Time.timeScale = 0;
+        }
     }
     private void GameOnTimeOver()
     {
-        
+        if (TimeUI.Instance.GetCurrentTime() >= TimeUI.Instance.GetMaxTime())
+        {
+            gameWonUI.GameWonShow();
+            Time.timeScale = 0;
+        }
     }
     private void GameOver()
     {
-
+        gameOverUI.GameOverShow();
+        Time.timeScale = 0;
     }
 }

@@ -2320,6 +2320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1181010267}
+  - component: {fileID: 1181010268}
   m_Layer: 5
   m_Name: GameOverUI
   m_TagString: Untagged
@@ -2350,6 +2351,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1181010268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181010266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda958b297083f140b43c7eb019c4d8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverText: {fileID: 0}
+  gameOverScoreText: {fileID: 0}
+  gameOverTimeText: {fileID: 0}
 --- !u!1 &1224658863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,6 +2425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1407820803}
+  - component: {fileID: 1407820804}
   m_Layer: 5
   m_Name: GameWonUI
   m_TagString: Untagged
@@ -2439,6 +2456,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1407820804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407820802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4959f54cbf861f44cba0c56c4211c5fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1408279865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3126,8 +3155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d88b3588919834fa339f846e5ed986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 1181010266}
-  gameWonUI: {fileID: 1407820802}
+  gameOverUI: {fileID: 1181010268}
+  gameWonUI: {fileID: 1407820804}
 --- !u!1 &1739482111
 GameObject:
   m_ObjectHideFlags: 0

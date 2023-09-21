@@ -19,4 +19,13 @@ public class GameOverUI : MonoBehaviour
     {
         
     }
+
+    public void GameOverShow()
+    {
+        gameObject.SetActive(true);
+    }
+    public void GameOverHide()
+    {
+        gameObject.SetActive(false);
+    }
 }
