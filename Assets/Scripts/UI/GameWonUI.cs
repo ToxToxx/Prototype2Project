@@ -1,19 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameWonUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private TextMeshProUGUI gameWonScoreText;
+    [SerializeField] private TextMeshProUGUI gameWonTimeText;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        gameWonScoreText.text = "Score: " + ScoreUI.Instance.GetScore();
+
+        string formattedTime = TimeUI.Instance.GetCurrentTime().ToString("0.00");
+        gameWonTimeText.text = "Time: " + formattedTime;
     }
     public void GameWonShow()
     {

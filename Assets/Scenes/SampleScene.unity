@@ -2327,7 +2327,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1181010267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2363,9 +2363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda958b297083f140b43c7eb019c4d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverText: {fileID: 0}
-  gameOverScoreText: {fileID: 0}
-  gameOverTimeText: {fileID: 0}
+  gameOverScoreText: {fileID: 1488020016}
+  gameOverTimeText: {fileID: 824238960}
 --- !u!1 &1224658863
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,7 +2431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1407820803
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2468,6 +2467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4959f54cbf861f44cba0c56c4211c5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameWonScoreText: {fileID: 1454912104}
+  gameWonTimeText: {fileID: 1480252893}
 --- !u!1 &1408279865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3398,7 +3399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 724302144}
   timeSwitch: 0
-  maxTime: 120
+  maxTime: 30
 --- !u!1 &1831184441
 GameObject:
   m_ObjectHideFlags: 0

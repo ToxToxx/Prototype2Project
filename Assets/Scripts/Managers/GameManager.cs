@@ -16,11 +16,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         timeSwitcher = false;
-        scoreSwitcher = true;
+        scoreSwitcher = false;
     }
 
     void Update()
     {
+        if (timeSwitcher && scoreSwitcher)
+        {
+            timeSwitcher = false;
+            scoreSwitcher = false;
+        }
         ScoreUI.Instance.SetScoreType(scoreSwitcher);
         TimeUI.Instance.SetTimeSwitch(timeSwitcher);
     }
