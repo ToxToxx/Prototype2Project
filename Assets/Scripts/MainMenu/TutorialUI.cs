@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject mainMenuUI;
+    [SerializeField] private Button tutorialHideButton;
+
+    private void Awake()
     {
         
+        tutorialHideButton.onClick.AddListener(() =>
+        {
+            HideTutorial();
+            mainMenuUI.GetComponent<MainMenuUI>().ShowMainMenu();
+        });
+    }
+    private void Start()
+    {
+        HideTutorial();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ShowTutorial()
     {
-        
+        gameObject.SetActive(true);
+    }
+
+    public void HideTutorial()
+    {
+        gameObject.SetActive(false);
     }
 }

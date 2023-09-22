@@ -19,7 +19,8 @@ public class MainMenuUI : MonoBehaviour
         });
         _tutorialButton.onClick.AddListener(() =>
         {
-            
+            HideMainMenu();
+            tutorialUI.GetComponent<TutorialUI>().ShowTutorial();
         });
 
         _quitButton.onClick.AddListener(() =>
@@ -28,5 +29,15 @@ public class MainMenuUI : MonoBehaviour
         });
 
         Time.timeScale = 1.0f;
+    }
+
+    public void ShowMainMenu()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void HideMainMenu()
+    {
+        gameObject.SetActive(false);
     }
 }
