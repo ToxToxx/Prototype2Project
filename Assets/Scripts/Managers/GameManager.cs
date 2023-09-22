@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        timeSwitcher = false;
+        timeSwitcher = true;
         scoreSwitcher = false;
     }
 

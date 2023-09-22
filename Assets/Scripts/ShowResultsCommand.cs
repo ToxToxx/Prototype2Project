@@ -7,9 +7,9 @@ public static class ShowResultsCommand
 {
     public static void ShowResults(TextMeshProUGUI scoreText, TextMeshProUGUI timeText)
     {
-        scoreText.text = "Score: " + ScoreUI.Instance.GetScore();
+        scoreText.text = "Score: " + ScoreAndTimeManager.Instance.GetScore();
 
-        string formattedTime = TimeUI.Instance.GetCurrentTime().ToString("0.00");
+        string formattedTime = ScoreAndTimeManager.Instance.GetCurrentTime().ToString("0.00");
         timeText.text = "Time: " + formattedTime;
     }
 }

@@ -16,7 +16,7 @@ public class EnemyHealth : HealthLogic
         if (currentHealth <= 0)
         {
             Die();
-            ScoreUI.Instance.SetScore(scoreDeath);
+            ScoreAndTimeManager.Instance.SetScore(scoreDeath);
         }
     }
     private void OnDestroy()

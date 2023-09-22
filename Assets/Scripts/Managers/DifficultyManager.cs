@@ -5,10 +5,17 @@ using UnityEngine;
 
 public class DifficultyManager : MonoBehaviour
 {
+    public static DifficultyManager Instance;
+
+
     [SerializeField] private float timeEnemySpawnerDecreaser;
     [SerializeField] private float scoreTreshold;
     [SerializeField] private bool isDifficultyChanged;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         isDifficultyChanged = false;
@@ -30,5 +37,10 @@ public class DifficultyManager : MonoBehaviour
         {
             isDifficultyChanged = false;
         }
+    }
+
+    public void SetTimeEnemySpawnerDecreaser(float timeAmount)
+    {
+        timeEnemySpawnerDecreaser = timeAmount;
     }
 }

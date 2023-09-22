@@ -38,7 +38,7 @@ public class GameOverManager : MonoBehaviour
 
     private void GameOnScoreOver()
     {
-        if(ScoreUI.Instance.GetScore() >= ScoreUI.Instance.GetMaxScore())
+        if(ScoreAndTimeManager.Instance.GetScore() >= ScoreAndTimeManager.Instance.GetMaxScore())
         {
             gameWonUI.GameWonShow();
             Time.timeScale = 0;
@@ -46,7 +46,7 @@ public class GameOverManager : MonoBehaviour
     }
     private void GameOnTimeOver()
     {
-        if (TimeUI.Instance.GetCurrentTime() >= TimeUI.Instance.GetMaxTime())
+        if (ScoreAndTimeManager.Instance.GetCurrentTime() >= ScoreAndTimeManager.Instance.GetMaxTime())
         {
             gameWonUI.GameWonShow();
             Time.timeScale = 0;
