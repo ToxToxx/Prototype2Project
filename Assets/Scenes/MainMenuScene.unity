@@ -705,7 +705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'DIFFICULTY : MEDIUM'
+  m_text: Difficulty
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Type: survival'
+  m_text: TYPE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -2895,11 +2895,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   easyMaxScore: 100
-  mediumMaxScore: 200
-  hardMaxScore: 250
-  easyMaxTime: 120
-  mediumMaxTime: 150
-  hardMaxTime: 200
+  mediumMaxScore: 150
+  hardMaxScore: 200
+  easyMaxTime: 80
+  mediumMaxTime: 100
+  hardMaxTime: 120
   easySpawnerTime: 0.2
   mediumSpawnerTime: 0.3
   hardSpawnerTime: 0.5

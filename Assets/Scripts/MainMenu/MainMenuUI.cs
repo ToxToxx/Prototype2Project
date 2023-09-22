@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
+    public static MainMenuUI Instance;
+
     [SerializeField] private GameObject tutorialUI;
     [SerializeField] private GameObject chooseGameTypeAndDifficultyUI;
 

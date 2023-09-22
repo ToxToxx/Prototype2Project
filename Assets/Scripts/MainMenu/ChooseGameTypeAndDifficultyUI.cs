@@ -38,8 +38,7 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
             ChangeDifficulty();
         });
         playButton.onClick.AddListener(() =>
-        {
-            
+        {           
             Loader.Load(Loader.Scene.GameScene);
         });
     }

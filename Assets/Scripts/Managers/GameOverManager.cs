@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,17 +6,22 @@ using UnityEngine;
 
 public class GameOverManager : MonoBehaviour
 {
+    public static GameOverManager Instance;
     [SerializeField] private GameOverUI gameOverUI;
     [SerializeField] private GameWonUI gameWonUI;
+    public event EventHandler GameIsOver;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         gameOverUI.GameOverHide();
         gameWonUI.GameWonHide();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!Player.Instance.IsDestroyed())
@@ -32,6 +38,7 @@ public class GameOverManager : MonoBehaviour
         else
         {
             GameOver();
+           
         }
         
     }
@@ -42,6 +49,7 @@ public class GameOverManager : MonoBehaviour
         {
             gameWonUI.GameWonShow();
             Time.timeScale = 0;
+            GameIsOver?.Invoke(this, EventArgs.Empty);
         }
     }
     private void GameOnTimeOver()
@@ -50,11 +58,13 @@ public class GameOverManager : MonoBehaviour
         {
             gameWonUI.GameWonShow();
             Time.timeScale = 0;
+            GameIsOver?.Invoke(this, EventArgs.Empty);
         }
     }
     private void GameOver()
     {
         gameOverUI.GameOverShow();
         Time.timeScale = 0;
+        GameIsOver?.Invoke(this, EventArgs.Empty);
     }
 }

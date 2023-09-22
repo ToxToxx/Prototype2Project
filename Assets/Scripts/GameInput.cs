@@ -1,22 +1,36 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class GameInput : MonoBehaviour
 {
-    public static GameInput Instance;
+    public static GameInput Instance { get; private set; }
     private PlayerInputActions playerInputActions;
     public event EventHandler OnShoot;
     public event EventHandler OnHeal;
     void Awake()
     {
+        gameObject.SetActive(true);
         Instance = this;
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
         playerInputActions.Player.Shoot.performed += Shoot_performed;
         playerInputActions.Player.Heal.performed += Heal_performed;
+        
+    }
+    private void Start()
+    {
+        GameOverManager.Instance.GameIsOver += GameOverManager_GameIsOver;
+
+    }
+
+
+    private void GameOverManager_GameIsOver(object sender, EventArgs e)
+    {
+        gameObject.SetActive(false);
     }
 
     private void Heal_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -40,5 +54,7 @@ public class GameInput : MonoBehaviour
     {
         playerInputActions.Player.Shoot.performed -= Shoot_performed;
         playerInputActions.Player.Heal.performed -= Heal_performed;
+
+        playerInputActions.Dispose();
     }
 }
