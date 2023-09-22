@@ -6,24 +6,26 @@ using UnityEngine.UI;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject tutorialUI;
+    [SerializeField] private GameObject chooseGameTypeAndDifficultyUI;
 
-    [SerializeField] private Button _playButton;
-    [SerializeField] private Button _tutorialButton;
-    [SerializeField] private Button _quitButton;
+    [SerializeField] private Button playButton;
+    [SerializeField] private Button tutorialButton;
+    [SerializeField] private Button quitButton;
 
     private void Awake()
     {
-        _playButton.onClick.AddListener(() =>
+        playButton.onClick.AddListener(() =>
         {
-            Loader.Load(Loader.Scene.GameScene);
+            HideMainMenu();
+            chooseGameTypeAndDifficultyUI.GetComponent<ChooseGameTypeAndDifficultyUI>().ShowChooseScreen();
         });
-        _tutorialButton.onClick.AddListener(() =>
+        tutorialButton.onClick.AddListener(() =>
         {
             HideMainMenu();
             tutorialUI.GetComponent<TutorialUI>().ShowTutorial();
         });
 
-        _quitButton.onClick.AddListener(() =>
+        quitButton.onClick.AddListener(() =>
         {
             Application.Quit();
         });

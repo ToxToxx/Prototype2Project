@@ -6,10 +6,7 @@ using static SetDifficulty;
 public class GameDifficultyManager : MonoBehaviour
 {
     public static GameDifficultyManager Instance;
-
-    [SerializeField] private bool timeSwitcher;
-    [SerializeField] private bool scoreSwitcher;
-    public GameDifficulty currentDifficulty = GameDifficulty.Medium;
+    public GameDifficulty currentDifficulty;
 
     private void Awake()
     {
@@ -17,7 +14,7 @@ public class GameDifficultyManager : MonoBehaviour
     }
     void Start()
     {
-
+        currentDifficulty = ChooseGameTypeAndDifficultyUI.Instance.GetGameDifficulty();
     }
 
     void Update()

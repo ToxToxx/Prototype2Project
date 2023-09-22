@@ -10,6 +10,8 @@ public class SetDifficulty
         Medium,
         Hard,         
     }
+
+
     public static void SetEasyDifficulty()
     {
         ScoreAndTimeManager.Instance.SetMaxScore(SetDifficultyManager.Instance.easyMaxScore);
