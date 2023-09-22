@@ -11,7 +11,6 @@ public class ScoreUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private int score;
     [SerializeField] private int maxScore;
-    [SerializeField] private bool scoreSwitch;
 
     private void Awake()
     {
@@ -19,12 +18,11 @@ public class ScoreUI : MonoBehaviour
     }
     private void Start()
     {
-        scoreSwitch = false;
         score = 0;
     }
     void Update()
     {
-        if (scoreSwitch)
+        if (GameManager.Instance.GetScoreSwitcher())
         {
             scoreText.color = Color.red;
             scoreText.text = "Score: " + score + " / " + maxScore;
@@ -42,10 +40,7 @@ public class ScoreUI : MonoBehaviour
         score += scoreAmount;
     }
 
-    public void SetScoreType(bool scoreType)
-    {
-        scoreSwitch = scoreType;
-    }
+
 
     public int GetScore()
     {

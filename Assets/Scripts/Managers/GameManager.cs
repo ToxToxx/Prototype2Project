@@ -26,8 +26,6 @@ public class GameManager : MonoBehaviour
             timeSwitcher = false;
             scoreSwitcher = false;
         }
-        ScoreUI.Instance.SetScoreType(scoreSwitcher);
-        TimeUI.Instance.SetTimeSwitch(timeSwitcher);
     }
 
     public bool GetTimeSwitcher()

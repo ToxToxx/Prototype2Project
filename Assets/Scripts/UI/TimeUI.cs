@@ -8,7 +8,6 @@ public class TimeUI : MonoBehaviour
 {
     public static TimeUI Instance;
     [SerializeField] private TextMeshProUGUI timeText;
-    [SerializeField] private bool timeSwitch;
     [SerializeField] private float maxTime;
 
     private float currentTime;
@@ -25,7 +24,7 @@ public class TimeUI : MonoBehaviour
     {
         currentTime += Time.deltaTime;
         string formattedTime = currentTime.ToString("0.00");
-        if (timeSwitch)
+        if (GameManager.Instance.GetTimeSwitcher())
         {
             timeText.color = Color.red;
             timeText.text = "Time: " + formattedTime + " / " + maxTime;
@@ -37,12 +36,6 @@ public class TimeUI : MonoBehaviour
         }
        
     }
-
-    public void SetTimeSwitch(bool switchType)
-    {
-        timeSwitch = switchType;
-    }
-
     public float GetCurrentTime()
     {
         return currentTime;
