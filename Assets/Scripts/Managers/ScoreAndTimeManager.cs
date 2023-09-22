@@ -4,19 +4,22 @@ using UnityEngine;
 
 public class ScoreAndTimeManager : MonoBehaviour
 {
+    public static ScoreAndTimeManager Instance;
     [SerializeField] private int score;
     [SerializeField] private int maxScore;
     [SerializeField] private float maxTime;
     private float currentTime;
 
-    // Start is called before the first frame update
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         score = 0;
         currentTime = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         currentTime += Time.deltaTime;
@@ -28,15 +31,32 @@ public class ScoreAndTimeManager : MonoBehaviour
         score += scoreAmount;
     }
 
-
-
     public int GetScore()
     {
         return score;
     }
 
+    public void SetMaxScore(int maxScoreAmount)
+    {
+        maxScore = maxScoreAmount;
+    }
     public int GetMaxScore()
     {
         return maxScore;
+    }
+
+    public float GetCurrentTime()
+    {
+        return currentTime;
+    }
+
+
+    public void SetMaxTime(float maxTimeAmount)
+    {
+        maxTime = maxTimeAmount;
+    }
+    public float GetMaxTime()
+    {
+        return maxTime;
     }
 }

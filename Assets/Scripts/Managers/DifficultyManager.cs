@@ -20,7 +20,7 @@ public class DifficultyManager : MonoBehaviour
 
     private void ScoreDifficultySet()
     {
-        float currentScore = ScoreUI.Instance.GetScore();
+        float currentScore = ScoreAndTimeManager.Instance.GetScore();
         if (currentScore % scoreTreshold == 0 && currentScore > 0 && !isDifficultyChanged && EnemySpawner.Instance.GetMaxTimer() > 1)
         {
             EnemySpawner.Instance.DecreaseMaxTimer(timeEnemySpawnerDecreaser);
