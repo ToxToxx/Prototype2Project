@@ -9,8 +9,7 @@ public class TutorialUI : MonoBehaviour
     [SerializeField] private Button tutorialHideButton;
 
     private void Awake()
-    {
-        
+    {      
         tutorialHideButton.onClick.AddListener(() =>
         {
             HideTutorial();

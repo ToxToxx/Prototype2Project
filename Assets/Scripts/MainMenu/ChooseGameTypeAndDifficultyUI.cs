@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static SetDifficulty;
+using static SetGameType;
 
 public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
     [SerializeField] private Button playButton;
 
     private GameDifficulty gameDifficulty;
+    private GameType gameType;
     private void Awake()
     {
         Instance = this;
@@ -29,8 +31,7 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
         });
         setGameTypeButton.onClick.AddListener(() =>
         {
-            HideChooseScreen();
-            mainMenuUI.GetComponent<MainMenuUI>().ShowMainMenu();
+            ChangeGameType();
         });
         setDifficultyButton.onClick.AddListener(() =>
         {
@@ -76,9 +77,32 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
         difficultyText.text = "DIFFICULTY: " + gameDifficulty;
     }
 
+    public void ChangeGameType()
+    {
+        switch (gameType)
+        {
+            case GameType.Score:
+                gameType = GameType.Time;
+                break;
+            case GameType.Time:
+                gameType = GameType.Survival;
+                break;
+            case GameType.Survival:
+                gameType = GameType.Score;
+                break;
+            default:
+                break;
+        }
+        gameTypeText.text = "TYPE: " + gameType;
+    }
+
     public GameDifficulty GetGameDifficulty()
     {
         return gameDifficulty;
+    }
+    public GameType GetGameType()
+    {
+        return gameType;
     }
 
 }

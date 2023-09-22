@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static SetGameType;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [SerializeField] private bool timeSwitcher;
-    [SerializeField] private bool scoreSwitcher;
+    private GameType gameType;
+    private bool timeSwitcher;
+    private bool scoreSwitcher;
 
     private void Awake()
     {
@@ -15,19 +17,33 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        timeSwitcher = true;
-        scoreSwitcher = false;
+        gameType = ChooseGameTypeAndDifficultyUI.Instance.GetGameType();
     }
 
     void Update()
     {
-        if (timeSwitcher && scoreSwitcher)
+        switch (gameType)
         {
-            timeSwitcher = false;
-            scoreSwitcher = false;
+            case GameType.Score:
+                SetScoreType();
+                break;
+            case GameType.Time:
+                SetTimeType();
+                break;
+            case GameType.Survival:
+                SetSurvivalType();
+                break;
         }
     }
 
+    public void SetTimeSwitcher(bool timeSwitch)
+    {
+        timeSwitcher = timeSwitch;
+    }
+    public void SetScoreSwitcher(bool scoreSwitch)
+    {
+        scoreSwitcher = scoreSwitch;
+    }
     public bool GetTimeSwitcher()
     {
         return timeSwitcher;
