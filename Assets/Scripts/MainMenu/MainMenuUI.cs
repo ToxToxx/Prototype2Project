@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject tutorialUI;
+
     [SerializeField] private Button _playButton;
     [SerializeField] private Button _tutorialButton;
     [SerializeField] private Button _quitButton;
