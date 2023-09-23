@@ -12,7 +12,7 @@ public class PlayAgainButtonUI : MonoBehaviour
     {
         playAgainButton.onClick.AddListener(() =>
         {
-            Loader.Load(Loader.Scene.GameScene);
+            Loader.Load(Loader.Scene.MainMenuScene);
         });
 
     }

@@ -31,6 +31,10 @@ public class GameInput : MonoBehaviour
     private void GameOverManager_GameIsOver(object sender, EventArgs e)
     {
         gameObject.SetActive(false);
+        playerInputActions.Player.Shoot.performed -= Shoot_performed;
+        playerInputActions.Player.Heal.performed -= Heal_performed;
+
+        playerInputActions.Dispose();
     }
 
     private void Heal_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
