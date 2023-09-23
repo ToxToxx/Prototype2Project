@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DefensePoint : MonoBehaviour
 {
+    public event EventHandler OnPlayerGetDamage;
     public static DefensePoint Instance;
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class DefensePoint : MonoBehaviour
         {
             PlayerHealth.Instance.TakeDamage(other.GetComponent<EnemyDamage>().GetDamage());
             Destroy(other.gameObject, 3);
+            OnPlayerGetDamage?.Invoke(this,EventArgs.Empty);
         }
     }
 
