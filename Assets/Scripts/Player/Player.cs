@@ -9,16 +9,11 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 5;
     [SerializeField] private float rotatingSpeed = 60;
     [SerializeField] private Transform playerVisual;
-    private bool isWalking;
     private int movingRangeX = 23;
 
     private void Awake()
     {
         Instance = this;
-    }
-    private void Start()
-    {
-        isWalking = false;
     }
 
     void Update()
@@ -44,7 +39,6 @@ public class Player : MonoBehaviour
         {
             Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
             Vector3 moveDir = new(inputVector.x, 0f, 0f);
-            isWalking = moveDir != Vector3.zero;
 
             transform.position += moveSpeed * Time.deltaTime * moveDir;
             
