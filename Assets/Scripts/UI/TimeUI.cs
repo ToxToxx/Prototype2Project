@@ -20,12 +20,12 @@ public class TimeUI : MonoBehaviour
         if (GameManager.Instance.GetTimeSwitcher())
         {
             timeText.color = Color.red;
-            timeText.text = "Time: " + formattedTime + " / " + ScoreAndTimeManager.Instance.GetMaxTime();
+            timeText.text = "время: " + formattedTime + " / " + ScoreAndTimeManager.Instance.GetMaxTime();
         }
         else
         {
             timeText.color = Color.yellow;
-            timeText.text = "Time: " + formattedTime;
+            timeText.text = "время: " + formattedTime;
         }
 
     }

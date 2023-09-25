@@ -10,6 +10,6 @@ public class HealthPotionsUI : MonoBehaviour
 
     void Update()
     {
-        healthPotionsText.text = "Health Potions: " + Convert.ToString(PlayerHealth.Instance.GetPotionsCount());
+        healthPotionsText.text = "€чейки лечени€: " + Convert.ToString(PlayerHealth.Instance.GetPotionsCount());
     }
 }

@@ -20,12 +20,12 @@ public class ScoreUI : MonoBehaviour
         if (GameManager.Instance.GetScoreSwitcher())
         {
             scoreText.color = Color.red;
-            scoreText.text = "Score: " + ScoreAndTimeManager.Instance.GetScore() + " / " + ScoreAndTimeManager.Instance.GetMaxScore();
+            scoreText.text = "счет: " + ScoreAndTimeManager.Instance.GetScore() + " / " + ScoreAndTimeManager.Instance.GetMaxScore();
         }
         else
         {
             scoreText.color = Color.yellow;
-            scoreText.text = "Score: " + ScoreAndTimeManager.Instance.GetScore();
+            scoreText.text = "счет: " + ScoreAndTimeManager.Instance.GetScore();
         }
         
     }

@@ -73,7 +73,7 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
             default:
                 break;
         }
-        difficultyText.text = "DIFFICULTY: " + gameDifficulty;
+        difficultyText.text = "сложность: " + gameDifficulty;
     }
 
     public void ChangeGameType()
@@ -92,7 +92,7 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
             default:
                 break;
         }
-        gameTypeText.text = "TYPE: " + gameType;
+        gameTypeText.text = "режим: " + gameType;
     }
 
     public GameDifficulty GetGameDifficulty()
