@@ -59,40 +59,48 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
 
     public void ChangeDifficulty()
     {
+        string localizationDifficultyName = " ";
         switch (gameDifficulty)
         {
             case GameDifficulty.Easy:
                 gameDifficulty = GameDifficulty.Medium;
+                localizationDifficultyName = "средняя";
                 break;
             case GameDifficulty.Medium:
                 gameDifficulty = GameDifficulty.Hard;
+                localizationDifficultyName = "тяжелая";
                 break;
             case GameDifficulty.Hard:
                 gameDifficulty = GameDifficulty.Easy;
+                localizationDifficultyName = "легкая";
                 break;
             default:
                 break;
         }
-        difficultyText.text = "сложность: " + gameDifficulty;
+        difficultyText.text = "сложность: " + localizationDifficultyName;
     }
 
     public void ChangeGameType()
     {
+        string localizationTypeName = " ";
         switch (gameType)
         {
             case GameType.Score:
                 gameType = GameType.Time;
+                localizationTypeName = "время";
                 break;
             case GameType.Time:
                 gameType = GameType.Survival;
+                localizationTypeName = "орда";
                 break;
             case GameType.Survival:
                 gameType = GameType.Score;
+                localizationTypeName = "очки";
                 break;
             default:
                 break;
         }
-        gameTypeText.text = "режим: " + gameType;
+        gameTypeText.text = "режим: " + localizationTypeName;
     }
 
     public GameDifficulty GetGameDifficulty()
