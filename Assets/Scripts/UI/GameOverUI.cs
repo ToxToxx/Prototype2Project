@@ -8,10 +8,11 @@ public class GameOverUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI gameOverScoreText;
     [SerializeField] private TextMeshProUGUI gameOverTimeText;
+    [SerializeField] private TextMeshProUGUI gameOverBestScoreText;
 
     void Update()
     {
-        ShowResultsCommand.ShowResults(gameOverScoreText, gameOverTimeText);
+        ShowResultsCommand.ShowResults(gameOverScoreText, gameOverTimeText, gameOverBestScoreText);
     }
 
     public void GameOverShow()

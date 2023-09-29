@@ -7,6 +7,7 @@ public class ScoreAndTimeManager : MonoBehaviour
     public static ScoreAndTimeManager Instance;
     [SerializeField] private int score;
     [SerializeField] private int maxScore;
+    [SerializeField] private int bestScore;
     [SerializeField] private float maxTime;
     private float currentTime;
 
@@ -18,11 +19,14 @@ public class ScoreAndTimeManager : MonoBehaviour
     {
         score = 0;
         currentTime = 0;
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
+
     }
 
     void Update()
     {
         currentTime += Time.deltaTime;
+        SetBestScore();
     }
 
 
@@ -44,6 +48,21 @@ public class ScoreAndTimeManager : MonoBehaviour
     {
         return maxScore;
     }
+
+    public void SetBestScore()
+    {
+        if (score > bestScore)
+        {
+            bestScore = score;
+            PlayerPrefs.SetInt("BestScore", bestScore);
+        }
+    }
+
+    public int GetBestScore()
+    {
+        return bestScore;
+    }
+
 
     public float GetCurrentTime()
     {
