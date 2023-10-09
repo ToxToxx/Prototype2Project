@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public static EnemySpawner Instance;
 
-    [SerializeField] private GameObject enemyPr;
+    [SerializeField] private List<GameObject> enemyPrefabs;
     [SerializeField] private int enemyRangeX;
     [SerializeField] private int enemyMax;
     [SerializeField] private int enemyCurrent;
@@ -30,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
 
         if(enemyCurrent < enemyMax && currentTimer > maxTimer)
         {
-            SpawnEnemy(enemyPr, randomPositionX);
+            SpawnEnemy(enemyPrefabs, randomPositionX);
 
             enemyCurrent++;
             currentTimer = 0;
@@ -42,10 +42,10 @@ public class EnemySpawner : MonoBehaviour
         enemyCurrent--;
     }
 
-    private void SpawnEnemy(GameObject enemy, float randomPositionX)
+    private void SpawnEnemy(List<GameObject> enemy, float randomPositionX)
     {
-
-        Instantiate(enemy, new Vector3(randomPositionX, transform.position.y, transform.position.z), Quaternion.identity);
+        int index = Random.Range(0, enemyPrefabs.Count);
+        Instantiate(enemy[index], new Vector3(randomPositionX, transform.position.y, transform.position.z), Quaternion.identity);
     }
     
     public void DecreaseMaxTimer(float timeAmount)

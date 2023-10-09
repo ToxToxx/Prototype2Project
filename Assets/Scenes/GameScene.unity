@@ -1952,12 +1952,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 957719323}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -891.08954, y: -203.79704, z: 5.3873253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1134538553}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &957719325
 MonoBehaviour:
@@ -2419,7 +2419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45d70871e2a3404aaf4103949149ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPr: {fileID: 1613191099110544370, guid: 8fd67ef519cabd0448ba302f59a762ea, type: 3}
+  enemyPrefabs:
+  - {fileID: 1613191099110544370, guid: 8fd67ef519cabd0448ba302f59a762ea, type: 3}
+  - {fileID: 3404641450798715097, guid: 2abb953c4dd79f1468c485d48261e1fb, type: 3}
   enemyRangeX: 10
   enemyMax: 5
   enemyCurrent: 0
@@ -2809,6 +2811,8 @@ Transform:
   - {fileID: 1588745987}
   - {fileID: 524538174}
   - {fileID: 1583008095}
+  - {fileID: 1483055813}
+  - {fileID: 957719324}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165606833
@@ -3522,12 +3526,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483055811}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -891.08954, y: -203.79704, z: 5.3873253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1134538553}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1488020014
 GameObject:
@@ -5264,6 +5268,4 @@ SceneRoots:
   - {fileID: 109844544}
   - {fileID: 897539731}
   - {fileID: 1134538553}
-  - {fileID: 1483055813}
-  - {fileID: 957719324}
   - {fileID: 852942568}
