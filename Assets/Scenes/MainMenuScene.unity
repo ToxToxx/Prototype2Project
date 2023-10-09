@@ -2874,6 +2874,9 @@ MonoBehaviour:
   easySpawnerTime: 0.2
   mediumSpawnerTime: 0.3
   hardSpawnerTime: 0.5
+  easyScoreCoef: 2
+  mediumScoreCoef: 1
+  hardScoreCoef: 0.5
 --- !u!1 &1177471826
 GameObject:
   m_ObjectHideFlags: 0

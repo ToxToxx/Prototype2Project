@@ -18,6 +18,10 @@ public class SetDifficultyManager : MonoBehaviour
     [SerializeField] public float mediumSpawnerTime;
     [SerializeField] public float hardSpawnerTime;
 
+    [SerializeField] public float easyScoreCoef;
+    [SerializeField] public float mediumScoreCoef;
+    [SerializeField] public float hardScoreCoef;
+
     private void Awake()
     {
         Instance = this;

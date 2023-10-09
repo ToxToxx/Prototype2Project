@@ -5,11 +5,12 @@ using UnityEngine;
 public class ScoreAndTimeManager : MonoBehaviour
 {
     public static ScoreAndTimeManager Instance;
-    [SerializeField] private int score;
-    [SerializeField] private int maxScore;
-    [SerializeField] private int bestScore;
+    [SerializeField] private float score;
+    [SerializeField] private float maxScore;
+    [SerializeField] private float bestScore;
     [SerializeField] private float maxTime;
     private float currentTime;
+    private float scoreCoef;
 
     private void Awake()
     {
@@ -30,12 +31,15 @@ public class ScoreAndTimeManager : MonoBehaviour
     }
 
 
-    public void SetScore(int scoreAmount)
+    public void SetScore(float scoreAmount)
     {
-        score += scoreAmount;
+        score += scoreAmount / scoreCoef;
     }
-
-    public int GetScore()
+    public void SetScoreCoef(float scoreCoefAmount)
+    {
+        scoreCoef = scoreCoefAmount;
+    }
+    public float GetScore()
     {
         return score;
     }
@@ -44,7 +48,7 @@ public class ScoreAndTimeManager : MonoBehaviour
     {
         maxScore = maxScoreAmount;
     }
-    public int GetMaxScore()
+    public float GetMaxScore()
     {
         return maxScore;
     }
@@ -54,11 +58,11 @@ public class ScoreAndTimeManager : MonoBehaviour
         if (score > bestScore)
         {
             bestScore = score;
-            PlayerPrefs.SetInt("BestScore", bestScore);
+            PlayerPrefs.SetFloat("BestScore", bestScore);
         }
     }
 
-    public int GetBestScore()
+    public float GetBestScore()
     {
         return bestScore;
     }
