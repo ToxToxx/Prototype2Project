@@ -33,7 +33,7 @@ public class ScoreAndTimeManager : MonoBehaviour
 
     public void SetScore(float scoreAmount)
     {
-        score += scoreAmount / scoreCoef;
+        score += scoreAmount * scoreCoef;
     }
     public void SetScoreCoef(float scoreCoefAmount)
     {
