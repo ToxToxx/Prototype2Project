@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
-  armor: 5
+  armor: 3
   scoreDeath: 5
 --- !u!54 &8672972838670664644
 Rigidbody:
