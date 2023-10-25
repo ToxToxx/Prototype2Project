@@ -1,14 +1,14 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameOverManager : MonoBehaviour
 {
     public static GameOverManager Instance;
-    [SerializeField] private GameOverUI gameOverUI;
-    [SerializeField] private GameWonUI gameWonUI;
+
+    [SerializeField] private GameOverUI _gameOverUI;
+    [SerializeField] private GameWonUI _gameWonUI;
+
     public event EventHandler GameIsOver;
 
     private void Awake()
@@ -18,8 +18,8 @@ public class GameOverManager : MonoBehaviour
 
     void Start()
     {
-        gameOverUI.Hide();
-        gameWonUI.Hide();
+        _gameOverUI.Hide();
+        _gameWonUI.Hide();
     }
 
     void Update()
@@ -47,7 +47,7 @@ public class GameOverManager : MonoBehaviour
     {
         if(ScoreAndTimeManager.Instance.GetScore() >= ScoreAndTimeManager.Instance.GetMaxScore())
         {
-            gameWonUI.Show();
+            _gameWonUI.Show();
             Time.timeScale = 0;
             GameIsOver?.Invoke(this, EventArgs.Empty);
         }
@@ -56,14 +56,14 @@ public class GameOverManager : MonoBehaviour
     {
         if (ScoreAndTimeManager.Instance.GetCurrentTime() >= ScoreAndTimeManager.Instance.GetMaxTime())
         {
-            gameWonUI.Show();
+            _gameWonUI.Show();
             Time.timeScale = 0;
             GameIsOver?.Invoke(this, EventArgs.Empty);
         }
     }
     private void GameOver()
     {
-        gameOverUI.Show();
+        _gameOverUI.Show();
         Time.timeScale = 0;
         GameIsOver?.Invoke(this, EventArgs.Empty);
     }

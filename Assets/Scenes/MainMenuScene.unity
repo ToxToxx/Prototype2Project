@@ -2864,18 +2864,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c82d5cd0394404fa418c0a55736717, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easyMaxScore: 100
-  mediumMaxScore: 150
-  hardMaxScore: 200
-  easyMaxTime: 80
-  mediumMaxTime: 100
-  hardMaxTime: 120
-  easySpawnerTime: 0.2
-  mediumSpawnerTime: 0.3
-  hardSpawnerTime: 0.5
-  easyScoreCoef: 0.5
-  mediumScoreCoef: 1
-  hardScoreCoef: 2
+  EasyMaxScore: 100
+  MediumMaxScore: 150
+  HardMaxScore: 200
+  EasyMaxTime: 80
+  MediumMaxTime: 100
+  HardMaxTime: 120
+  EasySpawnerTime: 0.2
+  MediumSpawnerTime: 0.3
+  HardSpawnerTime: 0.5
+  EasyScoreCoef: 0.5
+  MediumScoreCoef: 1
+  HardScoreCoef: 2
 --- !u!1 &1177471826
 GameObject:
   m_ObjectHideFlags: 0

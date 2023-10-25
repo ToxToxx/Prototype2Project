@@ -10,23 +10,23 @@ public class SetDifficulty
 
     public static void SetEasyDifficulty()
     {
-        ScoreAndTimeManager.Instance.SetMaxScore(SetDifficultyManager.Instance.easyMaxScore);
-        ScoreAndTimeManager.Instance.SetMaxTime(SetDifficultyManager.Instance.easyMaxTime);
-        DifficultyManager.Instance.SetTimeEnemySpawnerDecreaser(SetDifficultyManager.Instance.easySpawnerTime);
-        ScoreAndTimeManager.Instance.SetScoreCoef(SetDifficultyManager.Instance.easyScoreCoef);
+        ScoreAndTimeManager.Instance.SetMaxScore(SetDifficultyManager.Instance.EasyMaxScore);
+        ScoreAndTimeManager.Instance.SetMaxTime(SetDifficultyManager.Instance.EasyMaxTime);
+        DifficultyManager.Instance.SetTimeEnemySpawnerDecreaser(SetDifficultyManager.Instance.EasySpawnerTime);
+        ScoreAndTimeManager.Instance.SetScoreCoef(SetDifficultyManager.Instance.EasyScoreCoef);
     }
     public static void SetMediumDifficulty()
     {
-        ScoreAndTimeManager.Instance.SetMaxScore(SetDifficultyManager.Instance.mediumMaxScore);
-        ScoreAndTimeManager.Instance.SetMaxTime(SetDifficultyManager.Instance.mediumMaxTime);
-        DifficultyManager.Instance.SetTimeEnemySpawnerDecreaser(SetDifficultyManager.Instance.mediumSpawnerTime);
-        ScoreAndTimeManager.Instance.SetScoreCoef(SetDifficultyManager.Instance.mediumScoreCoef);
+        ScoreAndTimeManager.Instance.SetMaxScore(SetDifficultyManager.Instance.MediumMaxScore);
+        ScoreAndTimeManager.Instance.SetMaxTime(SetDifficultyManager.Instance.MediumMaxTime);
+        DifficultyManager.Instance.SetTimeEnemySpawnerDecreaser(SetDifficultyManager.Instance.MediumSpawnerTime);
+        ScoreAndTimeManager.Instance.SetScoreCoef(SetDifficultyManager.Instance.MediumScoreCoef);
     }
     public static void SetHardDifficulty()
     {
-        ScoreAndTimeManager.Instance.SetMaxScore(SetDifficultyManager.Instance.hardMaxScore);
-        ScoreAndTimeManager.Instance.SetMaxTime(SetDifficultyManager.Instance.hardMaxTime);
-        DifficultyManager.Instance.SetTimeEnemySpawnerDecreaser(SetDifficultyManager.Instance.hardSpawnerTime);
-        ScoreAndTimeManager.Instance.SetScoreCoef(SetDifficultyManager.Instance.hardScoreCoef);
+        ScoreAndTimeManager.Instance.SetMaxScore(SetDifficultyManager.Instance.HardMaxScore);
+        ScoreAndTimeManager.Instance.SetMaxTime(SetDifficultyManager.Instance.HardMaxTime);
+        DifficultyManager.Instance.SetTimeEnemySpawnerDecreaser(SetDifficultyManager.Instance.HardSpawnerTime);
+        ScoreAndTimeManager.Instance.SetScoreCoef(SetDifficultyManager.Instance.HardScoreCoef);
     }
 }

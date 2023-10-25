@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using static SetGameType;
 
@@ -7,9 +5,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    private GameType gameType;
-    private bool timeSwitcher;
-    private bool scoreSwitcher;
+    private GameType _gameType;
+    private bool _timeSwitcher;
+    private bool _scoreSwitcher;
 
     private void Awake()
     {
@@ -17,12 +15,12 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        gameType = ChooseGameTypeAndDifficultyUI.Instance.GetGameType();
+        _gameType = ChooseGameTypeAndDifficultyUI.Instance.GetGameType();
     }
 
     void Update()
     {
-        switch (gameType)
+        switch (_gameType)
         {
             case GameType.Score:
                 SetScoreType();
@@ -38,18 +36,18 @@ public class GameManager : MonoBehaviour
 
     public void SetTimeSwitcher(bool timeSwitch)
     {
-        timeSwitcher = timeSwitch;
+        _timeSwitcher = timeSwitch;
     }
     public void SetScoreSwitcher(bool scoreSwitch)
     {
-        scoreSwitcher = scoreSwitch;
+        _scoreSwitcher = scoreSwitch;
     }
     public bool GetTimeSwitcher()
     {
-        return timeSwitcher;
+        return _timeSwitcher;
     }
     public bool GetScoreSwitcher()
     {
-        return scoreSwitcher;
+        return _scoreSwitcher;
     }
 }

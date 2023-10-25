@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using static SetDifficulty;
 
 public class GameDifficultyManager : MonoBehaviour
 {
     public static GameDifficultyManager Instance;
-    public GameDifficulty currentDifficulty;
+    public GameDifficulty CurrentDifficulty;
 
     private void Awake()
     {
@@ -14,12 +12,12 @@ public class GameDifficultyManager : MonoBehaviour
     }
     void Start()
     {
-        currentDifficulty = ChooseGameTypeAndDifficultyUI.Instance.GetGameDifficulty();
+        CurrentDifficulty = ChooseGameTypeAndDifficultyUI.Instance.GetGameDifficulty();
     }
 
     void Update()
     {
-        switch (currentDifficulty)
+        switch (CurrentDifficulty)
         {
             case GameDifficulty.Easy:
                 SetEasyDifficulty();

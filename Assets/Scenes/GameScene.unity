@@ -867,10 +867,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326fe3795d961014b8a6c47133a3d12b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  maxScore: 100
-  bestScore: 0
-  maxTime: 120
+  _score: 0
+  _maxScore: 50
+  _bestScore: 0
+  _maxTime: 5
 --- !u!1 &610856145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2111,9 +2111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f341a633e12c5f04bac589f35a9ff478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeEnemySpawnerDecreaser: 0.5
-  scoreTreshold: 50
-  isDifficultyChanged: 0
+  _timeEnemySpawnerDecreaser: 0.5
+  _scoreTreshold: 50
+  _isDifficultyChanged: 0
 --- !u!1 &1012220499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,7 +3870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8371ea41c73140a4389758485c071470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDifficulty: 1
+  CurrentDifficulty: 0
 --- !u!1 &1588745986
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,8 +3915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d88b3588919834fa339f846e5ed986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverUI: {fileID: 1181010268}
-  gameWonUI: {fileID: 1407820804}
+  _gameOverUI: {fileID: 1181010268}
+  _gameWonUI: {fileID: 1407820804}
 --- !u!1001 &1690340016
 PrefabInstance:
   m_ObjectHideFlags: 0

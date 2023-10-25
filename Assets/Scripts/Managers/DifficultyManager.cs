@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DifficultyManager : MonoBehaviour
@@ -8,9 +5,9 @@ public class DifficultyManager : MonoBehaviour
     public static DifficultyManager Instance;
 
 
-    [SerializeField] private float timeEnemySpawnerDecreaser;
-    [SerializeField] private float scoreTreshold;
-    [SerializeField] private bool isDifficultyChanged;
+    [SerializeField] private float _timeEnemySpawnerDecreaser;
+    [SerializeField] private float _scoreTreshold;
+    [SerializeField] private bool _isDifficultyChanged;
 
     private void Awake()
     {
@@ -18,7 +15,7 @@ public class DifficultyManager : MonoBehaviour
     }
     private void Start()
     {
-        isDifficultyChanged = false;
+        _isDifficultyChanged = false;
     }
     void Update()
     {
@@ -28,19 +25,19 @@ public class DifficultyManager : MonoBehaviour
     private void ScoreDifficultySet()
     {
         float currentScore = ScoreAndTimeManager.Instance.GetScore();
-        if (currentScore % scoreTreshold == 0 && currentScore > 0 && !isDifficultyChanged && EnemySpawner.Instance.GetMaxTimer() > 1)
+        if (currentScore % _scoreTreshold == 0 && currentScore > 0 && !_isDifficultyChanged && EnemySpawner.Instance.GetMaxTimer() > 1)
         {
-            EnemySpawner.Instance.DecreaseMaxTimer(timeEnemySpawnerDecreaser);
-            isDifficultyChanged = true;
+            EnemySpawner.Instance.DecreaseMaxTimer(_timeEnemySpawnerDecreaser);
+            _isDifficultyChanged = true;
         }
-        else if (currentScore % scoreTreshold != 0)
+        else if (currentScore % _scoreTreshold != 0)
         {
-            isDifficultyChanged = false;
+            _isDifficultyChanged = false;
         }
     }
 
     public void SetTimeEnemySpawnerDecreaser(float timeAmount)
     {
-        timeEnemySpawnerDecreaser = timeAmount;
+        _timeEnemySpawnerDecreaser = timeAmount;
     }
 }

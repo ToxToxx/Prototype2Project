@@ -1,26 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SetDifficultyManager : MonoBehaviour
 {
     public static SetDifficultyManager Instance;
 
-    [SerializeField] public int easyMaxScore;
-    [SerializeField] public int mediumMaxScore;
-    [SerializeField] public int hardMaxScore;
+    public int EasyMaxScore;
+    public int MediumMaxScore;
+    public int HardMaxScore;
 
-    [SerializeField] public float easyMaxTime;
-    [SerializeField] public float mediumMaxTime;
-    [SerializeField] public float hardMaxTime;
+    public float EasyMaxTime;
+    public float MediumMaxTime;
+    public float HardMaxTime;
 
-    [SerializeField] public float easySpawnerTime;
-    [SerializeField] public float mediumSpawnerTime;
-    [SerializeField] public float hardSpawnerTime;
+    public float EasySpawnerTime;
+    public float MediumSpawnerTime;
+    public float HardSpawnerTime;
 
-    [SerializeField] public float easyScoreCoef;
-    [SerializeField] public float mediumScoreCoef;
-    [SerializeField] public float hardScoreCoef;
+    public float EasyScoreCoef;
+    public float MediumScoreCoef;
+    public float HardScoreCoef;
 
     private void Awake()
     {
