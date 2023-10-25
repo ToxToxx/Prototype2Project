@@ -5,11 +5,17 @@ using UnityEngine.EventSystems;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float enemySpeed;
+    [SerializeField] private float _enemySpeed = 3;
+    private Transform enemyTransform;
+
+    private void Start()
+    {
+       enemyTransform = transform;
+    }
 
     void Update()
     {
-        transform.Translate(enemySpeed * Time.deltaTime * Vector3.back);
+        enemyTransform.Translate(_enemySpeed * Time.deltaTime * Vector3.back);
     }
 
 

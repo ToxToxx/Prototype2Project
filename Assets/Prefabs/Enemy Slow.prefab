@@ -119,6 +119,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 902787269093542180, guid: 8fd67ef519cabd0448ba302f59a762ea,
         type: 3}
+      propertyPath: _armor
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 902787269093542180, guid: 8fd67ef519cabd0448ba302f59a762ea,
+        type: 3}
       propertyPath: maxHealth
       value: 75
       objectReference: {fileID: 0}
@@ -127,9 +132,19 @@ PrefabInstance:
       propertyPath: scoreDeath
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 902787269093542180, guid: 8fd67ef519cabd0448ba302f59a762ea,
+        type: 3}
+      propertyPath: _scoreDeath
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1336576232422583440, guid: 8fd67ef519cabd0448ba302f59a762ea,
         type: 3}
       propertyPath: damageAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336576232422583440, guid: 8fd67ef519cabd0448ba302f59a762ea,
+        type: 3}
+      propertyPath: _damageAmount
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1613191099110544370, guid: 8fd67ef519cabd0448ba302f59a762ea,
@@ -140,6 +155,11 @@ PrefabInstance:
     - target: {fileID: 6069673320074075713, guid: 8fd67ef519cabd0448ba302f59a762ea,
         type: 3}
       propertyPath: enemySpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069673320074075713, guid: 8fd67ef519cabd0448ba302f59a762ea,
+        type: 3}
+      propertyPath: _enemySpeed
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8519116387581070164, guid: 8fd67ef519cabd0448ba302f59a762ea,

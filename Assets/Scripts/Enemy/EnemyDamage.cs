@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    [SerializeField] private int damageAmount;
+    [SerializeField] private int _damageAmount = 3;
 
     public int GetDamage()
     {
-        return damageAmount;
+        return _damageAmount;
     }
 }

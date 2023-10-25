@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class EnemyHealth : HealthLogic
+public sealed class EnemyHealth : HealthLogic
 {
-    [SerializeField] private int armor;
-    [SerializeField] private int scoreDeath;
+    [SerializeField] private int _armor = 5;
+    [SerializeField] private int _scoreDeath = 5;
 
     public override void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount - armor;
+        currentHealth -= damageAmount - _armor;
 
         if (currentHealth <= 0)
         {
             Die();
-            ScoreAndTimeManager.Instance.SetScore(scoreDeath);
+            ScoreAndTimeManager.Instance.SetScore(_scoreDeath);
         }
     }
     private void OnDestroy()

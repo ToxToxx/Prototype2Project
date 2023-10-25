@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b8eace8bc483274f809524d705318be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 2
+  _damageAmount: 3
 --- !u!114 &6069673320074075713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b827c39d7ce7c4d8f8b83ad11159ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 3
+  _enemySpeed: 3
 --- !u!114 &902787269093542180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,8 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   currentHealth: 0
-  armor: 3
-  scoreDeath: 5
+  _armor: 5
+  _scoreDeath: 5
 --- !u!54 &8672972838670664644
 Rigidbody:
   m_ObjectHideFlags: 0
