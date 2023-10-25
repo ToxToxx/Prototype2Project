@@ -1109,7 +1109,7 @@ GameObject:
   - component: {fileID: 390013787}
   - component: {fileID: 390013786}
   m_Layer: 5
-  m_Name: TutorialText
+  m_Name: TutorialTitleText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2641,8 +2641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be335721edd1ea84a98c19553d16ec70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuUI: {fileID: 825861808}
-  tutorialHideButton: {fileID: 503354319}
+  _mainMenuUI: {fileID: 825861808}
+  _tutorialHideButton: {fileID: 503354319}
 --- !u!1 &825861808
 GameObject:
   m_ObjectHideFlags: 0
@@ -3258,7 +3258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1492793453}
   m_Layer: 5
-  m_Name: Tutorial Text
+  m_Name: TutorialDescriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

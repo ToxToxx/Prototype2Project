@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TutorialUI : MonoBehaviour, IUserInterfaceWindow
 {
-    [SerializeField] private GameObject mainMenuUI;
-    [SerializeField] private Button tutorialHideButton;
+    [SerializeField] private GameObject _mainMenuUI;
+    [SerializeField] private Button _tutorialHideButton;
 
     private void Awake()
     {      
-        tutorialHideButton.onClick.AddListener(() =>
+        _tutorialHideButton.onClick.AddListener(() =>
         {
             Hide();
-            mainMenuUI.GetComponent<MainMenuUI>().Show();
+            _mainMenuUI.GetComponent<MainMenuUI>().Show();
         });
     }
     private void Start()
