@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class HealthPointsUI : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI healthPointsText;
+    [SerializeField] private TextMeshProUGUI _healthPointsText;
 
     void Update()
     {
-        healthPointsText.text = "здоровье: " + PlayerHealth.Instance.currentHealth;
+        _healthPointsText.text = "здоровье: " + PlayerHealth.Instance.currentHealth;
     }
 }

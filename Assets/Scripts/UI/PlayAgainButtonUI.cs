@@ -1,16 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayAgainButtonUI : MonoBehaviour
 {
-    [SerializeField] private Button playAgainButton;
+    [SerializeField] private Button _playAgainButton;
     
     private void Awake()
     {
-        playAgainButton.onClick.AddListener(() =>
+        _playAgainButton.onClick.AddListener(() =>
         {
             Loader.Load(Loader.Scene.MainMenuScene);
         });
