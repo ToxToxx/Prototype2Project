@@ -1,21 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float _enemySpeed = 3;
-    private Transform enemyTransform;
+    private Transform _enemyTransform;
 
     private void Start()
     {
-       enemyTransform = transform;
+       _enemyTransform = transform;
     }
 
     void Update()
     {
-        enemyTransform.Translate(_enemySpeed * Time.deltaTime * Vector3.back);
+        _enemyTransform.Translate(_enemySpeed * Time.deltaTime * Vector3.back);
     }
 
 

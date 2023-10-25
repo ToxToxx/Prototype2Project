@@ -18,8 +18,8 @@ public class GameOverManager : MonoBehaviour
 
     void Start()
     {
-        gameOverUI.GameOverHide();
-        gameWonUI.GameWonHide();
+        gameOverUI.Hide();
+        gameWonUI.Hide();
     }
 
     void Update()
@@ -47,7 +47,7 @@ public class GameOverManager : MonoBehaviour
     {
         if(ScoreAndTimeManager.Instance.GetScore() >= ScoreAndTimeManager.Instance.GetMaxScore())
         {
-            gameWonUI.GameWonShow();
+            gameWonUI.Show();
             Time.timeScale = 0;
             GameIsOver?.Invoke(this, EventArgs.Empty);
         }
@@ -56,14 +56,14 @@ public class GameOverManager : MonoBehaviour
     {
         if (ScoreAndTimeManager.Instance.GetCurrentTime() >= ScoreAndTimeManager.Instance.GetMaxTime())
         {
-            gameWonUI.GameWonShow();
+            gameWonUI.Show();
             Time.timeScale = 0;
             GameIsOver?.Invoke(this, EventArgs.Empty);
         }
     }
     private void GameOver()
     {
-        gameOverUI.GameOverShow();
+        gameOverUI.Show();
         Time.timeScale = 0;
         GameIsOver?.Invoke(this, EventArgs.Empty);
     }

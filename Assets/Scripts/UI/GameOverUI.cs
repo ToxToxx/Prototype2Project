@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameOverUI : MonoBehaviour
+public class GameOverUI : MonoBehaviour, IUserInterfaceWindow
 {
     [SerializeField] private TextMeshProUGUI gameOverScoreText;
     [SerializeField] private TextMeshProUGUI gameOverTimeText;
@@ -15,11 +15,11 @@ public class GameOverUI : MonoBehaviour
         ShowResultsCommand.ShowResults(gameOverScoreText, gameOverTimeText, gameOverBestScoreText);
     }
 
-    public void GameOverShow()
+    public void Show()
     {
         gameObject.SetActive(true);
     }
-    public void GameOverHide()
+    public void Hide()
     {
         gameObject.SetActive(false);
     }

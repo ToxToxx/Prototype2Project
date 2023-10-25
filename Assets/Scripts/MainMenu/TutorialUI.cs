@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialUI : MonoBehaviour
+public class TutorialUI : MonoBehaviour, IUserInterfaceWindow
 {
     [SerializeField] private GameObject mainMenuUI;
     [SerializeField] private Button tutorialHideButton;
@@ -12,21 +12,21 @@ public class TutorialUI : MonoBehaviour
     {      
         tutorialHideButton.onClick.AddListener(() =>
         {
-            HideTutorial();
-            mainMenuUI.GetComponent<MainMenuUI>().ShowMainMenu();
+            Hide();
+            mainMenuUI.GetComponent<MainMenuUI>().Show();
         });
     }
     private void Start()
     {
-        HideTutorial();
+        Hide();
     }
 
-    public void ShowTutorial()
+    public void Show()
     {
         gameObject.SetActive(true);
     }
 
-    public void HideTutorial()
+    public void Hide()
     {
         gameObject.SetActive(false);
     }

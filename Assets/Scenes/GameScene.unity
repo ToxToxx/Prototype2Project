@@ -2419,13 +2419,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45d70871e2a3404aaf4103949149ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs:
-  - {fileID: 1613191099110544370, guid: 8fd67ef519cabd0448ba302f59a762ea, type: 3}
+  _enemyPrefabsList:
   - {fileID: 3404641450798715097, guid: 2abb953c4dd79f1468c485d48261e1fb, type: 3}
   - {fileID: 768791423182656138, guid: e10773346449eb744a74d97434c9f87c, type: 3}
+  - {fileID: 1613191099110544370, guid: 8fd67ef519cabd0448ba302f59a762ea, type: 3}
   _enemyRangeX: 10
   _enemyMax: 5
-  enemyCurrent: 0
+  _enemyCurrent: 0
   _maxTimer: 3
 --- !u!1 &1080878650
 GameObject:

@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class GameWonUI : MonoBehaviour
+
+public class GameWonUI : MonoBehaviour, IUserInterfaceWindow
 {
     [SerializeField] private TextMeshProUGUI gameWonScoreText;
     [SerializeField] private TextMeshProUGUI gameWonTimeText;
@@ -15,11 +13,11 @@ public class GameWonUI : MonoBehaviour
         ShowResultsCommand.ShowResults(gameWonScoreText, gameWonTimeText, gameWonBestScoreText);
     }
 
-    public void GameWonShow()
+    public void Show()
     {
         gameObject.SetActive(true);
     }
-    public void GameWonHide()
+    public void Hide()
     {
         gameObject.SetActive(false);
     }

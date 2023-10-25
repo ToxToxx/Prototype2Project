@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 
     private Vector3 _shootDir;
     private Transform _bulletTransform;
+
     private void Start()
     {
         _bulletTransform = GetComponent<Transform>();
@@ -14,7 +15,7 @@ public class Bullet : MonoBehaviour
     public void Setup(Vector3 shootDir)
     {
         _shootDir = shootDir;
-        transform.rotation = Quaternion.LookRotation(shootDir, Vector3.up);
+        _bulletTransform.rotation = Quaternion.LookRotation(shootDir, Vector3.up);
         Destroy(gameObject, _bulletDestroyTime);
     }
 

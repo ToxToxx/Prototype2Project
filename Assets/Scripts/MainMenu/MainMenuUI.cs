@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMenuUI : MonoBehaviour
+public class MainMenuUI : MonoBehaviour, IUserInterfaceWindow
 {
     public static MainMenuUI Instance;
 
@@ -17,13 +15,13 @@ public class MainMenuUI : MonoBehaviour
     {
         _playButton.onClick.AddListener(() =>
         {
-            HideMainMenu();
-            _chooseGameTypeAndDifficultyUI.GetComponent<ChooseGameTypeAndDifficultyUI>().ShowChooseScreen();
+            Hide();
+            _chooseGameTypeAndDifficultyUI.GetComponent<ChooseGameTypeAndDifficultyUI>().Show();
         });
         _tutorialInfoButton.onClick.AddListener(() =>
         {
-            HideMainMenu();
-            _tutorialUI.GetComponent<TutorialUI>().ShowTutorial();
+            Hide();
+            _tutorialUI.GetComponent<TutorialUI>().Show();
         });
 
 
@@ -31,12 +29,12 @@ public class MainMenuUI : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    public void ShowMainMenu()
+    public void Show()
     {
         gameObject.SetActive(true);
     }
 
-    public void HideMainMenu()
+    public void Hide()
     {
         gameObject.SetActive(false);
     }

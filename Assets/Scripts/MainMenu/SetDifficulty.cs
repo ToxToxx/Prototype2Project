@@ -1,4 +1,3 @@
-
 public class SetDifficulty
 {
     public enum GameDifficulty

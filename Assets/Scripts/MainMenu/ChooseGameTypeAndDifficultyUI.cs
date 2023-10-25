@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static SetDifficulty;
 using static SetGameType;
 
-public class ChooseGameTypeAndDifficultyUI : MonoBehaviour, ChangeDifficultyInterface
+public sealed class ChooseGameTypeAndDifficultyUI : MonoBehaviour, IChangeDifficulty, IChangeGameType, IUserInterfaceWindow
 {
     public static ChooseGameTypeAndDifficultyUI Instance;
 
@@ -30,8 +28,8 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour, ChangeDifficultyInte
 
         _difficultyHideButton.onClick.AddListener(() =>
         {
-            HideChooseScreen();
-            _mainMenuUI.GetComponent<MainMenuUI>().ShowMainMenu();
+            Hide();
+            _mainMenuUI.GetComponent<MainMenuUI>().Show();
         });
         _setGameTypeButton.onClick.AddListener(() =>
         {
@@ -49,15 +47,15 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour, ChangeDifficultyInte
     }
     private void Start()
     {
-        HideChooseScreen();
+        Hide();
     }
 
-    public void ShowChooseScreen()
+    public void Show()
     {
         gameObject.SetActive(true);
     }
 
-    public void HideChooseScreen()
+    public void Hide()
     {
         gameObject.SetActive(false);
     }
