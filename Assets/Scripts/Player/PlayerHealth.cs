@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : HealthLogic
+public sealed class PlayerHealth : HealthLogic
 {
     public static PlayerHealth Instance { get; set; }
-    [SerializeField] private int healAmount;
-    [SerializeField] private int healCount;
+
+    [SerializeField] private int _healAmount;
+    [SerializeField] private int _healCount;
 
     private void Awake()
     {
@@ -18,7 +17,10 @@ public class PlayerHealth : HealthLogic
         GameInput.Instance.OnHeal += GameInput_OnHeal;
     }
 
-
+    private void OnDestroy()
+    {
+        GameInput.Instance.OnHeal -= GameInput_OnHeal;
+    }
 
     private void GameInput_OnHeal(object sender, System.EventArgs e)
     {
@@ -27,14 +29,14 @@ public class PlayerHealth : HealthLogic
 
     private void Heal()
     {
-        if(healCount > 0 && currentHealth < maxHealth)
+        if(_healCount > 0 && currentHealth < maxHealth)
         {
-            currentHealth += healAmount;
+            currentHealth += _healAmount;
             if(currentHealth > maxHealth)
             {
                 currentHealth = maxHealth;
             }
-            healCount--;
+            _healCount--;
         } else
         {
             Debug.Log("You can't heal");
@@ -44,7 +46,7 @@ public class PlayerHealth : HealthLogic
 
     public int GetPotionsCount()
     {
-        return healCount;
+        return _healCount;
     }
 
 

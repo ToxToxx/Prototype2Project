@@ -12,13 +12,13 @@ public class SoundManager : MonoBehaviour
     {
         Instance = this;
     }
-    private void OnEnable()
+    private void Start()
     {
         GameInput.Instance.OnShoot += GameInput_OnShoot;
         GameInput.Instance.OnHeal += GameInput_OnHeal;
         DefensePoint.Instance.OnPlayerGetDamage += DefensePoint_OnPlayerGetDamage;
     }
-    private void OnDisable()
+    private void OnDestroy()
     {
         GameInput.Instance.OnShoot -= GameInput_OnShoot;
         GameInput.Instance.OnHeal -= GameInput_OnHeal;

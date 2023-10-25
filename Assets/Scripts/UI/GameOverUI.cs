@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameOverUI : MonoBehaviour, IUserInterfaceWindow
 {
-    [SerializeField] private TextMeshProUGUI gameOverScoreText;
-    [SerializeField] private TextMeshProUGUI gameOverTimeText;
-    [SerializeField] private TextMeshProUGUI gameOverBestScoreText;
+    [SerializeField] private TextMeshProUGUI _gameOverScoreText;
+    [SerializeField] private TextMeshProUGUI _gameOverTimeText;
+    [SerializeField] private TextMeshProUGUI _gameOverBestScoreText;
 
     void Update()
     {
-        ShowResultsCommand.ShowResults(gameOverScoreText, gameOverTimeText, gameOverBestScoreText);
+        ShowResultsCommand.ShowResults(_gameOverScoreText, _gameOverTimeText, _gameOverBestScoreText);
     }
 
     public void Show()

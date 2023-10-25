@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GameWonUI : MonoBehaviour, IUserInterfaceWindow
 {
-    [SerializeField] private TextMeshProUGUI gameWonScoreText;
-    [SerializeField] private TextMeshProUGUI gameWonTimeText;
-    [SerializeField] private TextMeshProUGUI gameWonBestScoreText;
+    [SerializeField] private TextMeshProUGUI _gameWonScoreText;
+    [SerializeField] private TextMeshProUGUI _gameWonTimeText;
+    [SerializeField] private TextMeshProUGUI _gameWonBestScoreText;
    
     void Update()
     {
-        ShowResultsCommand.ShowResults(gameWonScoreText, gameWonTimeText, gameWonBestScoreText);
+        ShowResultsCommand.ShowResults(_gameWonScoreText, _gameWonTimeText, _gameWonBestScoreText);
     }
 
     public void Show()

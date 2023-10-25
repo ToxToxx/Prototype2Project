@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShootProjectile : MonoBehaviour
 {
-    [SerializeField] private Transform gunEndPosition;
-    [SerializeField] private Transform gunStartPosition;
-    [SerializeField] private Transform pfBullet;
+    [SerializeField] private Transform _gunEndPosition;
+    [SerializeField] private Transform _gunStartPosition;
+    [SerializeField] private Transform _pfBullet;
     private void Start()
     {
         GameInput.Instance.OnShoot += GameInput_OnShoot;
@@ -14,9 +12,14 @@ public class PlayerShootProjectile : MonoBehaviour
 
     private void GameInput_OnShoot(object sender, System.EventArgs e)
     {
-        Transform bulletTransform = Instantiate(pfBullet, transform.position, Quaternion.identity);
+        Transform bulletTransform = Instantiate(_pfBullet, transform.position, Quaternion.identity);
 
-        Vector3 shootDir = (gunEndPosition.position - gunStartPosition.position).normalized;
+        Vector3 shootDir = (_gunEndPosition.position - _gunStartPosition.position).normalized;
         bulletTransform.GetComponent<Bullet>().Setup(shootDir);
+    }
+
+    private void OnDestroy()
+    {
+        GameInput.Instance.OnShoot -= GameInput_OnShoot;
     }
 }

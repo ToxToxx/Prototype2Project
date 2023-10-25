@@ -10,12 +10,12 @@ public class Bullet : MonoBehaviour
 
     private void Start()
     {
-        _bulletTransform = GetComponent<Transform>();
+        _bulletTransform = transform;
     }
     public void Setup(Vector3 shootDir)
     {
         _shootDir = shootDir;
-        _bulletTransform.rotation = Quaternion.LookRotation(shootDir, Vector3.up);
+        transform.rotation = Quaternion.LookRotation(shootDir, Vector3.up);
         Destroy(gameObject, _bulletDestroyTime);
     }
 

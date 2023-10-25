@@ -988,9 +988,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cddad1c38e0d950469ac2c91b949bb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunEndPosition: {fileID: 647562992}
-  gunStartPosition: {fileID: 1165606834}
-  pfBullet: {fileID: 6268270606335290592, guid: 8978ea0672f060b4e8963a72e6994dab,
+  _gunEndPosition: {fileID: 647562992}
+  _gunStartPosition: {fileID: 1165606834}
+  _pfBullet: {fileID: 6268270606335290592, guid: 8978ea0672f060b4e8963a72e6994dab,
     type: 3}
 --- !u!114 &610856151
 MonoBehaviour:
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8736c8c202f154c4196ddaef9648630e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundMask:
+  _groundMask:
     serializedVersion: 2
     m_Bits: 8
 --- !u!114 &610856152
@@ -1021,8 +1021,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
-  healAmount: 2
-  healCount: 3
+  _healAmount: 2
+  _healCount: 3
 --- !u!1 &637959829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,9 +2945,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda958b297083f140b43c7eb019c4d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverScoreText: {fileID: 1488020016}
-  gameOverTimeText: {fileID: 824238960}
-  gameOverBestScoreText: {fileID: 81721679}
+  _gameOverScoreText: {fileID: 1488020016}
+  _gameOverTimeText: {fileID: 824238960}
+  _gameOverBestScoreText: {fileID: 81721679}
 --- !u!1 &1224658863
 GameObject:
   m_ObjectHideFlags: 0
@@ -3052,9 +3052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4959f54cbf861f44cba0c56c4211c5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameWonScoreText: {fileID: 1454912104}
-  gameWonTimeText: {fileID: 1480252893}
-  gameWonBestScoreText: {fileID: 1103508908}
+  _gameWonScoreText: {fileID: 1454912104}
+  _gameWonTimeText: {fileID: 1480252893}
+  _gameWonBestScoreText: {fileID: 1103508908}
 --- !u!1 &1408279865
 GameObject:
   m_ObjectHideFlags: 0
