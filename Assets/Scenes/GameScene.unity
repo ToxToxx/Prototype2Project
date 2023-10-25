@@ -2423,10 +2423,10 @@ MonoBehaviour:
   - {fileID: 1613191099110544370, guid: 8fd67ef519cabd0448ba302f59a762ea, type: 3}
   - {fileID: 3404641450798715097, guid: 2abb953c4dd79f1468c485d48261e1fb, type: 3}
   - {fileID: 768791423182656138, guid: e10773346449eb744a74d97434c9f87c, type: 3}
-  enemyRangeX: 10
-  enemyMax: 5
+  _enemyRangeX: 10
+  _enemyMax: 5
   enemyCurrent: 0
-  maxTimer: 3
+  _maxTimer: 3
 --- !u!1 &1080878650
 GameObject:
   m_ObjectHideFlags: 0

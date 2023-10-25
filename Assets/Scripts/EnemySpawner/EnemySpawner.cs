@@ -7,10 +7,10 @@ public class EnemySpawner : MonoBehaviour
     public static EnemySpawner Instance;
 
     [SerializeField] private List<GameObject> enemyPrefabs;
-    [SerializeField] private int enemyRangeX;
-    [SerializeField] private int enemyMax;
+    [SerializeField] private int _enemyRangeX = 10;
+    [SerializeField] private int _enemyMax = 5;
     [SerializeField] private int enemyCurrent;
-    [SerializeField] private float maxTimer;
+    [SerializeField] private float _maxTimer = 3;
     private float currentTimer;
     private float randomPositionX;
 
@@ -25,10 +25,10 @@ public class EnemySpawner : MonoBehaviour
     }
     private void Update()
     {
-        randomPositionX = Random.Range(-enemyRangeX, enemyRangeX);
+        randomPositionX = Random.Range(-_enemyRangeX, _enemyRangeX);
         currentTimer += Time.deltaTime;
 
-        if(enemyCurrent < enemyMax && currentTimer > maxTimer)
+        if(enemyCurrent < _enemyMax && currentTimer > _maxTimer)
         {
             SpawnEnemy(enemyPrefabs, randomPositionX);
 
@@ -50,11 +50,11 @@ public class EnemySpawner : MonoBehaviour
     
     public void DecreaseMaxTimer(float timeAmount)
     {
-        maxTimer -= timeAmount;
+        _maxTimer -= timeAmount;
     }
 
     public float GetMaxTimer()
     {
-        return maxTimer;
+        return _maxTimer;
     }
 }

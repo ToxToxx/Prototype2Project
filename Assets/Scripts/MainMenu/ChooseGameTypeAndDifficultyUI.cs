@@ -6,39 +6,44 @@ using UnityEngine.UI;
 using static SetDifficulty;
 using static SetGameType;
 
-public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
+public class ChooseGameTypeAndDifficultyUI : MonoBehaviour, ChangeDifficultyInterface
 {
     public static ChooseGameTypeAndDifficultyUI Instance;
 
-    [SerializeField] private GameObject mainMenuUI;
-    [SerializeField] private TextMeshProUGUI difficultyText;
-    [SerializeField] private TextMeshProUGUI gameTypeText;
-    [SerializeField] private Button difficultyHideButton;
-    [SerializeField] private Button setGameTypeButton;
-    [SerializeField] private Button setDifficultyButton;
-    [SerializeField] private Button playButton;
+    [SerializeField] private MainMenuUI _mainMenuUI;
 
-    private GameDifficulty gameDifficulty;
-    private GameType gameType;
+    [SerializeField] private TextMeshProUGUI _difficultyText;
+    [SerializeField] private TextMeshProUGUI _gameTypeText;
+
+    [SerializeField] private Button _difficultyHideButton;
+    [SerializeField] private Button _setGameTypeButton;
+    [SerializeField] private Button _setDifficultyButton;
+    [SerializeField] private Button _playButton;
+
+    private GameDifficulty _gameDifficulty;
+    private GameType _gameType;
+    private string _localizationDifficultyName = " ";
+
     private void Awake()
     {
         Instance = this;
 
-        difficultyHideButton.onClick.AddListener(() =>
+        _difficultyHideButton.onClick.AddListener(() =>
         {
             HideChooseScreen();
-            mainMenuUI.GetComponent<MainMenuUI>().ShowMainMenu();
+            _mainMenuUI.GetComponent<MainMenuUI>().ShowMainMenu();
         });
-        setGameTypeButton.onClick.AddListener(() =>
+        _setGameTypeButton.onClick.AddListener(() =>
         {
             ChangeGameType();
         });
-        setDifficultyButton.onClick.AddListener(() =>
+        _setDifficultyButton.onClick.AddListener(() =>
         {
             ChangeDifficulty();
+           
         });
-        playButton.onClick.AddListener(() =>
-        {           
+        _playButton.onClick.AddListener(() =>
+        {
             Loader.Load(Loader.Scene.GameScene);
         });
     }
@@ -59,57 +64,58 @@ public class ChooseGameTypeAndDifficultyUI : MonoBehaviour
 
     public void ChangeDifficulty()
     {
-        string localizationDifficultyName = " ";
-        switch (gameDifficulty)
+        _localizationDifficultyName = " ";
+        switch (_gameDifficulty)
         {
             case GameDifficulty.Easy:
-                gameDifficulty = GameDifficulty.Medium;
-                localizationDifficultyName = "средн€€";
+                _gameDifficulty = GameDifficulty.Medium;
+                _localizationDifficultyName = "средн€€";
                 break;
             case GameDifficulty.Medium:
-                gameDifficulty = GameDifficulty.Hard;
-                localizationDifficultyName = "т€жела€";
+                _gameDifficulty = GameDifficulty.Hard;
+                _localizationDifficultyName = "т€жела€";
                 break;
             case GameDifficulty.Hard:
-                gameDifficulty = GameDifficulty.Easy;
-                localizationDifficultyName = "легка€";
+                _gameDifficulty = GameDifficulty.Easy;
+                _localizationDifficultyName = "легка€";
                 break;
             default:
                 break;
         }
-        difficultyText.text = "сложность: " + localizationDifficultyName;
+        _difficultyText.text = "сложность: " + _localizationDifficultyName;
     }
 
     public void ChangeGameType()
     {
         string localizationTypeName = " ";
-        switch (gameType)
+        switch (_gameType)
         {
             case GameType.Score:
-                gameType = GameType.Time;
+                _gameType = GameType.Time;
                 localizationTypeName = "врем€";
                 break;
             case GameType.Time:
-                gameType = GameType.Survival;
+                _gameType = GameType.Survival;
                 localizationTypeName = "орда";
                 break;
             case GameType.Survival:
-                gameType = GameType.Score;
+                _gameType = GameType.Score;
                 localizationTypeName = "очки";
                 break;
             default:
                 break;
         }
-        gameTypeText.text = "режим: " + localizationTypeName;
+        _gameTypeText.text = "режим: " + localizationTypeName;
     }
 
-    public GameDifficulty GetGameDifficulty()
-    {
-        return gameDifficulty;
-    }
+
     public GameType GetGameType()
     {
-        return gameType;
+        return _gameType;
     }
+    public GameDifficulty GetGameDifficulty()
+    {
+        return _gameDifficulty;
 
+    }
 }

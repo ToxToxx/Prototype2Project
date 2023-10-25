@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 281286907}
   - component: {fileID: 281286906}
   m_Layer: 5
-  m_Name: DifficultyButtonText
+  m_Name: DifficultyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1635,7 +1635,7 @@ GameObject:
   - component: {fileID: 551630234}
   - component: {fileID: 551630233}
   m_Layer: 5
-  m_Name: GameTypeButtonText
+  m_Name: GameTypeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2582,13 +2582,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0036d298b6d6ada47a6945a44410300f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuUI: {fileID: 825861808}
-  difficultyText: {fileID: 281286907}
-  gameTypeText: {fileID: 551630234}
-  difficultyHideButton: {fileID: 845733129}
-  setGameTypeButton: {fileID: 2082154848}
-  setDifficultyButton: {fileID: 1750750658}
-  playButton: {fileID: 422061120}
+  _mainMenuUI: {fileID: 825861810}
+  _difficultyText: {fileID: 281286907}
+  _gameTypeText: {fileID: 551630234}
+  _difficultyHideButton: {fileID: 845733129}
+  _setGameTypeButton: {fileID: 2082154848}
+  _setDifficultyButton: {fileID: 1750750658}
+  _playButton: {fileID: 422061120}
 --- !u!1 &768293700
 GameObject:
   m_ObjectHideFlags: 0
@@ -2713,7 +2713,7 @@ GameObject:
   - component: {fileID: 845733130}
   - component: {fileID: 845733129}
   m_Layer: 5
-  m_Name: QuitButton
+  m_Name: DifficultyHideButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3737,7 +3737,7 @@ GameObject:
   - component: {fileID: 1675078066}
   - component: {fileID: 1675078065}
   m_Layer: 5
-  m_Name: QuitButtonText
+  m_Name: DifficultyHideButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4033,7 +4033,7 @@ GameObject:
   - component: {fileID: 1750750659}
   - component: {fileID: 1750750658}
   m_Layer: 5
-  m_Name: DifficultyButton
+  m_Name: SetDifficultyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4756,7 +4756,7 @@ GameObject:
   - component: {fileID: 2082154849}
   - component: {fileID: 2082154848}
   m_Layer: 5
-  m_Name: GameTypeButton
+  m_Name: SetGameTypeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
