@@ -1971,7 +1971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1a593d588d58640a382025039e7b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClipRefsSO: {fileID: 11400000, guid: ef5b2b61e6584d14f8bfd79137e1c177, type: 2}
+  _audioClipRefsSO: {fileID: 11400000, guid: ef5b2b61e6584d14f8bfd79137e1c177, type: 2}
 --- !u!1 &978051276
 GameObject:
   m_ObjectHideFlags: 3
