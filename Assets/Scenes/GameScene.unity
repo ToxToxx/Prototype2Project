@@ -923,9 +923,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73ce7ead4b83f3c43b45a2c91167da03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 12
-  rotatingSpeed: 60
-  playerVisual: {fileID: 1795513824}
+  _moveSpeed: 12
+  _rotatingSpeed: 60
+  _playerVisual: {fileID: 1690340017}
 --- !u!136 &610856148
 CapsuleCollider:
   m_ObjectHideFlags: 0

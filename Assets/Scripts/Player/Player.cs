@@ -1,21 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
-    [SerializeField] private float moveSpeed = 5;
-    [SerializeField] private float rotatingSpeed = 60;
-    [SerializeField] private Transform playerVisual;
-    private int movingRangeX = 23;
+
+    [SerializeField] private float _moveSpeed = 12;
+    [SerializeField] private float _rotatingSpeed = 60;
+    [SerializeField] private Transform _playerVisual;
+
+    private readonly int _movingRangeX = 23;
+    private Transform _playerTransform;
 
     private void Awake()
     {
         Instance = this;
     }
 
+    private void Start()
+    {
+        _playerTransform = GetComponent<Transform>();
+    }
     void Update()
     {
         if (!gameObject.IsDestroyed())
@@ -27,25 +32,25 @@ public class Player : MonoBehaviour
 
     private void HandleMovement()
     {
-        if (transform.position.x > movingRangeX)
+        if (_playerTransform.position.x > _movingRangeX)
         {
-            transform.position = new Vector3(movingRangeX, transform.position.y, transform.position.z);
+            _playerTransform.position = new Vector3(_movingRangeX, _playerTransform.position.y, _playerTransform.position.z);
         }
-        else if (transform.position.x < -movingRangeX)
+        else if (_playerTransform.position.x < -_movingRangeX)
         {
-            transform.position = new Vector3(-movingRangeX, transform.position.y, transform.position.z);
+            _playerTransform.position = new Vector3(-_movingRangeX, _playerTransform.position.y, _playerTransform.position.z);
         }
         else
         {
             Vector2 inputVector = GameInput.Instance.GetMovementVectorNormalized();
             Vector3 moveDir = new(inputVector.x, 0f, 0f);
 
-            transform.position += moveSpeed * Time.deltaTime * moveDir;
+            _playerTransform.position += _moveSpeed * Time.deltaTime * moveDir;
             
             if (moveDir != Vector3.zero)
             {
                 Quaternion toRotation = Quaternion.LookRotation(moveDir, Vector3.up);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotatingSpeed * Time.deltaTime);
+                _playerTransform.rotation = Quaternion.RotateTowards(_playerTransform.rotation, toRotation, _rotatingSpeed * Time.deltaTime);
             }
         }
     }
