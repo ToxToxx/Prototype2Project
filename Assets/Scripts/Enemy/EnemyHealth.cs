@@ -7,9 +7,9 @@ public sealed class EnemyHealth : HealthLogic
 
     public override void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount - _armor;
+        CurrentHealth -= damageAmount - _armor;
 
-        if (currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Die();
             ScoreAndTimeManager.Instance.SetScore(_scoreDeath);

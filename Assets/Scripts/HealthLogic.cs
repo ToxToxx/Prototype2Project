@@ -1,24 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class HealthLogic : MonoBehaviour
 {
-    [SerializeField] public int maxHealth;
-    public int currentHealth;
+    [SerializeField] public int MaxHealth;
+    public int CurrentHealth;
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = MaxHealth;
     }
 
 
     public virtual void TakeDamage(int damageAmount)
     {
 
-        currentHealth -= damageAmount;
+        CurrentHealth -= damageAmount;
 
-        if (currentHealth <= 0)
+        if (CurrentHealth <= 0)
         {
             Die();
         }

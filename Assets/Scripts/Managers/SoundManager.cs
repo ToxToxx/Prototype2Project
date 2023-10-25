@@ -27,17 +27,17 @@ public class SoundManager : MonoBehaviour
 
     private void DefensePoint_OnPlayerGetDamage(object sender, System.EventArgs e)
     {
-        PlaySound(_audioClipRefsSO.hitSound, Player.Instance.transform.position);
+        PlaySound(_audioClipRefsSO.HitSound, Player.Instance.transform.position);
     }
 
     private void GameInput_OnHeal(object sender, System.EventArgs e)
     {
-        PlaySound(_audioClipRefsSO.healSound, Player.Instance.transform.position);
+        PlaySound(_audioClipRefsSO.HealSound, Player.Instance.transform.position);
     }
 
     private void GameInput_OnShoot(object sender, System.EventArgs e)
     {
-        PlaySound(_audioClipRefsSO.shootSound, Player.Instance.transform.position);
+        PlaySound(_audioClipRefsSO.ShootSound, Player.Instance.transform.position);
     }
 
     private void PlaySound(AudioClip audioClip, Vector3 position, float volumeMultiplier = 50f)

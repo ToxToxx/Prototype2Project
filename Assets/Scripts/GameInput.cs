@@ -1,24 +1,27 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
+
 
 public class GameInput : MonoBehaviour
 {
     public static GameInput Instance { get; private set; }
-    private PlayerInputActions playerInputActions;
+
+    private PlayerInputActions _playerInputActions;
+
     public event EventHandler OnShoot;
     public event EventHandler OnHeal;
     void Awake()
     {
         gameObject.SetActive(true);
+
         Instance = this;
-        playerInputActions = new PlayerInputActions();
-        playerInputActions.Player.Enable();
-        playerInputActions.Player.Shoot.performed += Shoot_performed;
-        playerInputActions.Player.Heal.performed += Heal_performed;
+
+        _playerInputActions = new PlayerInputActions();
+
+        _playerInputActions.Player.Enable();
+
+        _playerInputActions.Player.Shoot.performed += Shoot_performed;
+        _playerInputActions.Player.Heal.performed += Heal_performed;
         
     }
     private void Start()
@@ -31,10 +34,10 @@ public class GameInput : MonoBehaviour
     private void GameOverManager_GameIsOver(object sender, EventArgs e)
     {
         gameObject.SetActive(false);
-        playerInputActions.Player.Shoot.performed -= Shoot_performed;
-        playerInputActions.Player.Heal.performed -= Heal_performed;
+        _playerInputActions.Player.Shoot.performed -= Shoot_performed;
+        _playerInputActions.Player.Heal.performed -= Heal_performed;
 
-        playerInputActions.Dispose();
+        _playerInputActions.Dispose();
     }
 
     private void Heal_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -49,16 +52,16 @@ public class GameInput : MonoBehaviour
 
     public Vector2 GetMovementVectorNormalized()
     {
-        Vector2 inputVector = playerInputActions.Player.Move.ReadValue<Vector2>();
+        Vector2 inputVector = _playerInputActions.Player.Move.ReadValue<Vector2>();
         inputVector = inputVector.normalized;
         return inputVector;
     }
 
     private void OnDestroy()
     {
-        playerInputActions.Player.Shoot.performed -= Shoot_performed;
-        playerInputActions.Player.Heal.performed -= Heal_performed;
+        _playerInputActions.Player.Shoot.performed -= Shoot_performed;
+        _playerInputActions.Player.Heal.performed -= Heal_performed;
 
-        playerInputActions.Dispose();
+        _playerInputActions.Dispose();
     }
 }

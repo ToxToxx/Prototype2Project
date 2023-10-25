@@ -13,7 +13,7 @@ public sealed class PlayerHealth : HealthLogic
     }
     private void Start()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = MaxHealth;
         GameInput.Instance.OnHeal += GameInput_OnHeal;
     }
 
@@ -29,12 +29,12 @@ public sealed class PlayerHealth : HealthLogic
 
     private void Heal()
     {
-        if(_healCount > 0 && currentHealth < maxHealth)
+        if(_healCount > 0 && CurrentHealth < MaxHealth)
         {
-            currentHealth += _healAmount;
-            if(currentHealth > maxHealth)
+            CurrentHealth += _healAmount;
+            if(CurrentHealth > MaxHealth)
             {
-                currentHealth = maxHealth;
+                CurrentHealth = MaxHealth;
             }
             _healCount--;
         } else

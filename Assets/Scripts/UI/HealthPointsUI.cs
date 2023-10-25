@@ -7,6 +7,6 @@ public class HealthPointsUI : MonoBehaviour
 
     void Update()
     {
-        _healthPointsText.text = "здоровье: " + PlayerHealth.Instance.currentHealth;
+        _healthPointsText.text = "здоровье: " + PlayerHealth.Instance.CurrentHealth;
     }
 }
