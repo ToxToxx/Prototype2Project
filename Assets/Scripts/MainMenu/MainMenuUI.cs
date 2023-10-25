@@ -7,24 +7,23 @@ public class MainMenuUI : MonoBehaviour
 {
     public static MainMenuUI Instance;
 
-    [SerializeField] private GameObject tutorialUI;
-    [SerializeField] private GameObject chooseGameTypeAndDifficultyUI;
+    [SerializeField] private GameObject _tutorialUI;
+    [SerializeField] private GameObject _chooseGameTypeAndDifficultyUI;
 
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button tutorialButton;
-    [SerializeField] private Button quitButton;
+    [SerializeField] private Button _playButton;
+    [SerializeField] private Button _tutorialInfoButton;
 
     private void Awake()
     {
-        playButton.onClick.AddListener(() =>
+        _playButton.onClick.AddListener(() =>
         {
             HideMainMenu();
-            chooseGameTypeAndDifficultyUI.GetComponent<ChooseGameTypeAndDifficultyUI>().ShowChooseScreen();
+            _chooseGameTypeAndDifficultyUI.GetComponent<ChooseGameTypeAndDifficultyUI>().ShowChooseScreen();
         });
-        tutorialButton.onClick.AddListener(() =>
+        _tutorialInfoButton.onClick.AddListener(() =>
         {
             HideMainMenu();
-            tutorialUI.GetComponent<TutorialUI>().ShowTutorial();
+            _tutorialUI.GetComponent<TutorialUI>().ShowTutorial();
         });
 
 

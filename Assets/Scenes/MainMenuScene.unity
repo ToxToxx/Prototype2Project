@@ -2695,11 +2695,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd3d728e034c784da62be651107d802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialUI: {fileID: 768293700}
-  chooseGameTypeAndDifficultyUI: {fileID: 762065136}
-  playButton: {fileID: 742656660}
-  tutorialButton: {fileID: 48615892}
-  quitButton: {fileID: 0}
+  _tutorialUI: {fileID: 768293700}
+  _chooseGameTypeAndDifficultyUI: {fileID: 762065136}
+  _playButton: {fileID: 742656660}
+  _tutorialInfoButton: {fileID: 48615892}
 --- !u!1 &845733127
 GameObject:
   m_ObjectHideFlags: 0
