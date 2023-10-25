@@ -1,13 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class TimeUI : MonoBehaviour
 {
     public static TimeUI Instance;
-    [SerializeField] private TextMeshProUGUI timeText;
+
+    [SerializeField] private TextMeshProUGUI _timeText;
 
     private void Awake()
     {
@@ -19,13 +17,13 @@ public class TimeUI : MonoBehaviour
         string formattedTime = ScoreAndTimeManager.Instance.GetCurrentTime().ToString("0.00");
         if (GameManager.Instance.GetTimeSwitcher())
         {
-            timeText.color = Color.red;
-            timeText.text = "время: " + formattedTime + " / " + ScoreAndTimeManager.Instance.GetMaxTime();
+            _timeText.color = Color.red;
+            _timeText.text = "время: " + formattedTime + " / " + ScoreAndTimeManager.Instance.GetMaxTime();
         }
         else
         {
-            timeText.color = Color.yellow;
-            timeText.text = "время: " + formattedTime;
+            _timeText.color = Color.yellow;
+            _timeText.text = "время: " + formattedTime;
         }
 
     }

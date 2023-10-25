@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -8,7 +5,7 @@ public class ScoreUI : MonoBehaviour
 {
     public static ScoreUI Instance;
 
-    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI _scoreText;
 
     private void Awake()
     {
@@ -19,13 +16,13 @@ public class ScoreUI : MonoBehaviour
     {
         if (GameManager.Instance.GetScoreSwitcher())
         {
-            scoreText.color = Color.red;
-            scoreText.text = "счет: " + ScoreAndTimeManager.Instance.GetScore() + " / " + ScoreAndTimeManager.Instance.GetMaxScore();
+            _scoreText.color = Color.red;
+            _scoreText.text = "счет: " + ScoreAndTimeManager.Instance.GetScore() + " / " + ScoreAndTimeManager.Instance.GetMaxScore();
         }
         else
         {
-            scoreText.color = Color.yellow;
-            scoreText.text = "счет: " + ScoreAndTimeManager.Instance.GetScore();
+            _scoreText.color = Color.yellow;
+            _scoreText.text = "счет: " + ScoreAndTimeManager.Instance.GetScore();
         }
         
     }

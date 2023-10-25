@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f7b96569d9deb469d0a523a644e47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 1831184443}
+  _scoreText: {fileID: 1831184443}
 --- !u!1 &897539730
 GameObject:
   m_ObjectHideFlags: 0
@@ -4176,7 +4176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70d304a0edcf5c4eb72c8cda88acd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeText: {fileID: 724302144}
+  _timeText: {fileID: 724302144}
 --- !u!1001 &1811115383
 PrefabInstance:
   m_ObjectHideFlags: 0
